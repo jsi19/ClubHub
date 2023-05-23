@@ -10,6 +10,7 @@ function App() {
       <div>
       <HomeScreen />
       </div>
+      Welcome to ClubHub!!!!!
     </div>
   );
 }
