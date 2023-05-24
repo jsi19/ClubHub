@@ -13,6 +13,7 @@ const NavigationBar = () => {
   const navLogoStyle = {
     height: '40px',
     marginRight: '8px',
+    cursor: 'pointer',
   };
 
   const navTitleStyle = {
@@ -37,14 +38,14 @@ const NavigationBar = () => {
     cursor: 'pointer',
     color: '#115D81',
   };
+  
 
   return (
     <div style={navContainerStyle}>
       <div style={navTitleStyle}>
         <div style={navLogoStyle}>
-          {/* Logo  */}
+          <img src="/logo_icon.png" alt="Logo" style={{ height: '100%' }} />
         </div>
-        ClubHub
       </div>
       <div style={navItemsStyle}>
         <div style={navItemStyle}>Match</div>
