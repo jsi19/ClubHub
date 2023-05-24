@@ -7,6 +7,7 @@ const MidText = {
   color: '#2C95B5',
   alignItems: 'center',
   padding: '225px 0',
+  minHeight: '100vh', /* Set the height to 100% of the viewport height */
 };
 
 const TitleStyle = {
