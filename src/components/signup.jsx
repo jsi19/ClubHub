@@ -7,12 +7,12 @@ import {
   Typography,
   Link,
 } from "@mui/material";
-import ReactDOM from "react-dom/client";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { collection, setDoc, doc } from "firebase/firestore";
 import { db } from "..";
 
+// We can also change this up when we finish the sign up page
 const styles = {
   textInputsVertical: { flexDirection: "column" },
   usernameInput: { flexDirection: "column", margin: 16, width: 300 },
@@ -48,14 +48,14 @@ export default function SignUp({ handleChange }) {
       })
       .catch((error) => {
         if (error.code === "auth/email-already-in-use") {
-          alert("That email address is already in use.");
+          alert("That email address is already exists. Try logging in.");
           return 1;
         } else if (error.code === "auth/invalid-email") {
           // we shouldn't reach here since we already have checks in place
           alert("That email address is invalid.");
           return 1;
         }
-        console.log("Error signing up user.");
+        console.log("There was an error signing up the user.");
         console.error(error);
         return 1;
       });
@@ -81,6 +81,11 @@ export default function SignUp({ handleChange }) {
     }
     const dom = e.substring(e.indexOf("@") + 1);
     if (dom.endsWith("ucla.edu")) {
+      setEmailError(false);
+      return true;
+    }
+    //Added this extra since newly admitted student emails contain the @g.ucla.edu vs @ucla.edu
+    else if (dom.endsWith("g.ucla.edu")) {
       setEmailError(false);
       return true;
     }

@@ -7,10 +7,10 @@ import {
   Link,
 } from "@mui/material";
 import React, { useState } from "react";
-import ReactDOM from "react-dom/client";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
+// We can change this to our style when we have the sign up page ready
 const styles = {
   textInputsVertical: { flexDirection: "column" },
   usernameInput: { flexDirection: "column", margin: 16, width: 300 },
