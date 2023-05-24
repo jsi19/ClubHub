@@ -1,0 +1,38 @@
+.complete-profile-container {
+  background-color: #f0ebd8;
+  color: #115d81;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+}
+
+.form-select {
+  text-align: left;
+  margin-bottom: 15px;
+  background-color: #50B0C8; /* Set background color for all dropdown menus */
+}
+
+.form-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.selected-interests-container {
+  margin-top: 30px;
+}
+
+.selected-interests-container h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.selected-interest {
+  display: inline-block;
+  background-color: #50B0C8; /* Set background color for selected interests */
+  color: #fff;
+  padding: 5px 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
