@@ -5,6 +5,7 @@ import App from "./App";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCkrafwTirf4tDBD7AnaiDGwSo2ToaaKH0",
@@ -18,6 +19,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const firebaseapp = initializeApp(firebaseConfig);
+export const db = getFirestore(firebaseapp);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
