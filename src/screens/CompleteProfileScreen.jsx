@@ -36,52 +36,55 @@ const CompleteProfileScreen = () => {
     <div className="complete-profile-container">
       <h1>Complete Your Profile</h1>
       <Form>
-        <Form.Group controlId="major">
-          <Form.Label>Select your major</Form.Label>
+        <div className="form-group">
+          <Form.Label>Major:</Form.Label>
           <Form.Select
-            className="form-select"
+            className="form-select major-school-year"
             value={major}
             onChange={(e) => setMajor(e.target.value)}
           >
-            <option value="">Select your major</option>
+            <option value=""></option>
             <option value="major1">Major 1</option>
             <option value="major2">Major 2</option>
+            <option value="major3">Major 3</option>
+            <option value="major4">Major 4</option>
             {/* Add more options */}
           </Form.Select>
-        </Form.Group>
+        </div>
 
-        <Form.Group controlId="schoolYear">
-          <Form.Label>Select your school year</Form.Label>
+        <div className="form-group">
+          <Form.Label>UCLA Graduation Year:</Form.Label>
           <Form.Select
-            className="form-select"
+            className="form-select major-school-year"
             value={schoolYear}
             onChange={(e) => setSchoolYear(e.target.value)}
           >
-            <option value="">Select your school year</option>
+            <option value=""></option>
             <option value="1">1st Year</option>
             <option value="2">2nd Year</option>
-            <option value="3">3rd Year</option>
-            <option value="4">4th Year</option>
+            <option value="3">3rd Year/1st Year Transfer</option>
+            <option value="4">4th Year/2nd Year Transfer</option>
+            <option value="5">5th Year/3rd Year Transfer</option>
           </Form.Select>
-        </Form.Group>
+        </div>
 
-        <Form.Group controlId="interests">
-          <Form.Label>Select your interests</Form.Label>
+        <div className="form-group">
+          <Form.Label>Avaliable Interests:</Form.Label>
           <Form.Select className="form-select" multiple onChange={handleInterestSelection}>
-            <option value="interest1">Interest 1</option>
-            <option value="interest2">Interest 2</option>
-            <option value="interest2">Interest 3</option>
-            <option value="interest2">Interest 4</option>
-            <option value="interest2">Interest 5</option>
-            <option value="interest2">Interest 6</option>
-            <option value="interest2">Interest 7</option>
+            <option value="Interest 1">Interest 1</option>
+            <option value="Interest 2">Interest 2</option>
+            <option value="Interest 3">Interest 3</option>
+            <option value="Interest 4">Interest 4</option>
+            <option value="Interest 5">Interest 5</option>
+            <option value="Interest 6">Interest 6</option>
+            <option value="Interest 7">Interest 7</option>
             {/* Add more options */}
           </Form.Select>
-        </Form.Group>
+        </div>
 
-        <div>
-          <h4>Selected Interests:</h4>
-          <div className="selected-interests-container">
+        <div className="selected-interests-container">
+          <h4>Your Interests:</h4>
+          <div>
             {interests.map((interest, index) => (
               <SelectedInterest
                 key={index}

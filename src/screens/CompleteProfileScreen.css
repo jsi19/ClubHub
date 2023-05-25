@@ -7,18 +7,24 @@
 
 .form-select {
   text-align: left;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   background-color: #50B0C8; /* Set background color for all dropdown menus */
+  max-width: 300px; /* Limit the width of the dropdown menu */
+  font-family: 'Poppins', sans-serif; /* Set font family for the dropdown menu options */
+}
+
+.form-select.major-school-year {
+  max-width: 200px; /* Set a slightly smaller width for major/school year dropdowns */
 }
 
 .form-label {
   font-family: 'Poppins', sans-serif;
   font-size: 1.4rem;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .selected-interests-container {
-  margin-top: 30px;
+  margin-top: 5px;
 }
 
 .selected-interests-container h4 {
@@ -35,4 +41,22 @@
   margin-bottom: 10px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+/* Adjust the position of the dropdown menus */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive Styles */
+
+@media screen and (max-width: 768px) {
+  .form-select {
+    max-width: 100%; /* Set full width for dropdown menus on small screens */
+  }
+
+  .selected-interests-container {
+    margin-top: 5px; /* Adjust the margin-top value as needed */
+  }
 }
