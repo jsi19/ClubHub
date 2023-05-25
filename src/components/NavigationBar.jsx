@@ -49,7 +49,6 @@ const NavigationBar = () => {
       </div>
       <div style={navItemsStyle}>
         <div style={navItemStyle}>Match</div>
-        <div style={navItemStyle}>Search</div>
         <div style={navItemStyle}>My Clubs</div>
         <div style={navItemStyle}>Profile</div>
       </div>
