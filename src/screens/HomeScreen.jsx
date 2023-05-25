@@ -37,7 +37,6 @@ const GetStartedButton = {
 const HomeScreen = () => {
   return (
     <div>
-      <NavigationBar />
       <body style={{backgroundColor:'#F7DEC0'}}>
       <div style={MidText}>
         <div style={TitleStyle}>Find Your Match</div>
