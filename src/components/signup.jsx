@@ -88,6 +88,24 @@ export default function SignUp({ handleChange }) {
     else if (dom.endsWith("g.ucla.edu")) {
       setEmailError(false);
       return true;
+    } else if (dom.endsWith("gmail.com")) {
+      setEmailError(false);
+      return true;
+    } else if (dom.endsWith("ymail.com")) {
+      setEmailError(false);
+      return true;
+    } else if (dom.endsWith("yahoo.com")) {
+      setEmailError(false);
+      return true;
+    } else if (dom.endsWith("icloud.com")) {
+      setEmailError(false);
+      return true;
+    } else if (dom.endsWith("outlook.com")) {
+      setEmailError(false);
+      return true;
+    } else if (dom.endsWith("aol.com")) {
+      setEmailError(false);
+      return true;
     }
     setEmailError(true);
     return false;
