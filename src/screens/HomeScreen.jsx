@@ -20,16 +20,11 @@ const HomeScreen = () => {
   };
 
   const filteredClubs = clubsData.filter((club) => {
-    if (selectedStars.length === 0) {
-      return true; // Show all clubs if no stars are selected
-    }
-    else {
-      return (
-        selectedStars.includes(Math.floor(club.rating)) &&
-        (selectedInterest === '' || club.title.includes(selectedInterest))
-      );
-    }
+    const interestMatch = selectedInterest === '' || club.title.includes(selectedInterest);
+    const starsMatch = selectedStars.length === 0 || selectedStars.includes(Math.floor(club.rating));
+    return interestMatch && starsMatch;
   });
+  
 
   return (
     <div>
@@ -37,9 +32,10 @@ const HomeScreen = () => {
         <h2>What clubs best fit your interest</h2>
         <input
           type="text"
-          placeholder="Search by interest..."
+          placeholder="Search by interest/name..."
           value={selectedInterest}
           onChange={handleInterestSelection}
+          style={{ width: '170px' }}
         />
       </section>
       <section className="content-section">
@@ -65,10 +61,9 @@ const HomeScreen = () => {
             </div>
           </div>
 
-          <div className="interest-filter">
+          {/* <div className="interest-filter">
             <h3 className='text-element'>Filter by Interest</h3>
-            {/* Implement your dropdown component for interests here */}
-          </div>
+          </div> */}
         </section>
 
         <section className="clubs-list">
