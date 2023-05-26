@@ -90,7 +90,7 @@ const clubsData = [
     description:
       "Acts2fellowship is a Christian student group on the UCLA campus. We meet every week on campus to study the Bible and find out God's perspective. College is the perfect time to explore the big questions of life and here at A2F, it's a safe place to ask them.",
     RecommendedInterest: ["Religion", "Christian", "God", "Bible"],
-    rating: 5.8,
+    rating: 4.8,
     numReviews: 17,
     imageURL:
       "https://images.squarespace-cdn.com/content/v1/5d72a6426b29cc0001f4aa63/9c65d31a-b3a6-4075-96b6-14618775c0b9/a2flogo-04.png?format=1500w",
@@ -122,7 +122,7 @@ const clubsData = [
       "Volunteering",
       "Healthcare",
     ],
-    rating: 6.7,
+    rating: 3.7,
     numReviews: 65,
     imageURL:
       "https://aimatucla.weebly.com/uploads/1/3/2/8/132834536/new-aim-logo_orig.png",
@@ -138,7 +138,7 @@ const clubsData = [
       "Computer Science",
       "Software Engineering",
     ],
-    rating: 8.2,
+    rating: 4.2,
     numReviews: 64,
     imageURL:
       "https://static.wixstatic.com/media/c57e34_226b202dd0f44150b58dbe87a8aef231~mv2.png/v1/fill/w_920,h_920,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/AIRES%20LOGO%20(Without%20Words)_edited.png",
@@ -149,7 +149,7 @@ const clubsData = [
     description:
       "AI Safety at UCLA researches the impact of increasingly powerful AI systems. We promote the development of fair, secure, and useful AI tools. Join us if you'd like to learn about AI Safety and research how we can use AI to build a better future. http://aisafetyatucla.org/",
     RecommendedInterest: ["AI", "Robotics", "CS", "Software Engineering"],
-    rating: 6.3,
+    rating: 4.3,
     numReviews: 45,
     imageURL: "http://aisafetyatucla.org/assets/logo-5122d258.png",
   },
@@ -207,7 +207,7 @@ const clubsData = [
       "Community Involvement",
       "Women",
     ],
-    rating: 5.5,
+    rating: 4.5,
     numReviews: 16,
     imageURL:
       "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/271747154_10159164415852098_2294470892016819674_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=xFmeIhhIXY4AX9OdnNd&_nc_ht=scontent-lax3-2.xx&oh=00_AfAoMqOntE-43XEqNVk6VSmAEbp6cLjhVCchSVhEgYRGZQ&oe=6474EF47",
@@ -218,7 +218,7 @@ const clubsData = [
     description:
       "The object of this society shall be: 1. To encourage excellence in prehealth scholarship. 2. To stimulate an appreciation of the importance of prehealth education in the study of medicine and all of the relating health fileds. 3. To promote cooperation and contacts between health professional and prehealth students and educators in developing an adequate program of prehealth education. 4. To bind together similarly interested students. 5. To use its knowledge for the benefit of health organizations, charities, and the community.",
     RecommendedInterest: ["Pre-health", "Fraternity", "Medicine", "Healthcare"],
-    rating: 5.4,
+    rating: 4.4,
     numReviews: 12,
     imageURL:
       "https://images.squarespace-cdn.com/content/v1/62ba867d90a0970ee1fd65bd/2f6dd0cc-d4b2-4a71-91ea-b502b47f2711/Screen+Shot+2022-07-01+at+1.49.22+PM.png?format=1500w",
@@ -234,7 +234,7 @@ const clubsData = [
       "Community Involvement",
       "Fraternity",
     ],
-    rating: 7.2,
+    rating: 4.2,
     numReviews: 11,
     imageURL:
       "https://www.aepiucla.com/uploads/1/3/0/9/130966101/published/esponda.png?1582521397",
@@ -245,7 +245,7 @@ const clubsData = [
     description:
       "To promote service, leadership and community among all Alumni Scholars, and to bridge the gap between Alumni and students around campus and across the world. ASC's signature projects include UCLA Locks of Love, My Last Lecture, UCLA Alumni Mentor Program, and much more.",
     RecommendedInterest: ["Leadership", "Alumni", "Scholar", "Mentor"],
-    rating: 6.1,
+    rating: 3.1,
     numReviews: 56,
     imageURL:
       "https://alumnischolarsclub.alumni.ucla.edu/resources/images/logo.png",
@@ -266,7 +266,7 @@ const clubsData = [
     description:
       "American Cancer Society On Campus (ACS) is a collegiate branch of the American Cancer Society that brings the fight against cancer directly to college students by planning Relay for Life at UCLA, encouraging education, inspiring advocacy, and celebrating survivorship. Mainly, we aim to build a community for those affected by cancer and work so that one day, no one has to hear the dreaded words 'you have cancer.' Relay for Life is a 24-hour fundraising festival held at Drake Stadium to celebrate survivors, remember those we've lost, and fight back against a disease that affects and connects us all in some way! The event includes inspiring ceremonies, our Mr. Relay Pageant, talented performers, a silent rave, and so much more. In the past five years, we raised over $1,000,000 for the American Cancer Society to fund cancer research and patient services to support those battling, making us the largest college Relay West of the Mississippi! Throughout the year, in addition to planning Relay, we also plan education rallies on Bruin Walk for various types of cancers, organize hospital visits to bring cards to patients on the Oncology floor, and host fundraising events such as comedy shows and concerts! Since our start 20 years ago, American Cancer Society On Campus has been recognized with the Leaders of Hope award three years in a row, Survivor & Caregiver Engagement Chapter of the Year three years in a row, Advocacy Chapter of the Year, and Top Fundraiser of the year.",
     RecommendedInterest: ["Healthcare", "Science", "Cancer", "Medicine"],
-    rating: 4.5,
+    rating: 3.5,
     numReviews: 10,
     imageURL:
       "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/326259828_581626346719516_4330066905185523653_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=AA2w0addbCsAX-0Ke6u&_nc_ht=scontent-lax3-1.xx&oh=00_AfDh796va1OfSNudrNUHeMg0-a4rk9Lmrht0aTiqQesJlA&oe=64735845",
@@ -282,7 +282,7 @@ const clubsData = [
       "Indigenous",
       "Cultural",
     ],
-    rating: 6.7,
+    rating: 3.7,
     numReviews: 21,
     imageURL:
       "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/300442130_581448560100819_5226119457214064677_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=TjIzhcbKkbIAX-Aa3DU&_nc_ht=scontent-lax3-1.xx&oh=00_AfBflaGazZ4A16nlu1l4YfOarU6NPz0scjTOcCypdt-11A&oe=647492C3",
@@ -293,7 +293,7 @@ const clubsData = [
     description:
       "AISES Mission Statement: The American Indian Science and Engineering Society (AISES) is a national, nonprofit organization focused on substantially increasing the representation of American Indians, Alaska Natives, Native Hawaiians, Pacific Islanders, First Nations and other indigenous peoples of North America in science, technology, engineering and math (STEM) studies and careers.",
     RecommendedInterest: ["Indian", "Engineering", "Indigenous", "Cultural"],
-    rating: 6.2,
+    rating: 3.2,
     numReviews: 30,
     imageURL:
       "https://lh3.googleusercontent.com/wfSlv4pmwFmkfQSG7eo6SfTCJCs1pGqVkhAQPbQiLW9t5y0irp0zcABsmHniEyafSMhg-cy-qoRX2nu1hJcrb-c=w16383",
@@ -304,7 +304,7 @@ const clubsData = [
     description:
       "AIAA is the world’s largest technical society dedicated to the global aerospace profession. Created in 1963 by the merger of the two great aerospace societies of the day, the American Rocket Society (founded in 1930 as the American Interplanetary Society), and the Institute of the Aerospace Sciences (established in 1933 as the Institute of the Aeronautical Sciences), AIAA carries forth a proud tradition of more than 80 years of aerospace leadership. AIAA currently has more than 240 student branches, including 40+ international student branches, with a total active membership of over 7,500 students worldwide. The UCLA student branch of AIAA will be your base of operations during your college years. Meet fellow students who share your passion and commitment to aerospace. Student branches foster opportunities for growth by allowing members to engage with real world engineering projects, networking with fellow students and faculty interested in aerospace, and providing professional development resources. AIAA at UCLA is home to four unique engineering student projects: Design Build Fly, Uncrewed Aerial Systems, Bruin Spacecraft Group and Rocket Project.",
     RecommendedInterest: ["Engineering", "Science", "Aerospace", "Space"],
-    rating: 8.1,
+    rating: 3.1,
     numReviews: 89,
     imageURL: "http://aiaa.seas.ucla.edu/assets/img/AIAA_logo.png",
   },
@@ -314,7 +314,7 @@ const clubsData = [
     description:
       "The American Institute of Chemical Engineers (AIChE) is a professional organization for chemical engineers. AIChE was established in 1908 with the purpose of establishing chemical engineers as a profession independent from chemists and mechanical engineers. The mission of the AIChE student chapter at UCLA is to promote excellence in the Chemical Engineering Department of the School of Engineering and Applied Science by providing resources and support to the undergraduate students so that they can succeed academically and advance professionally. AIChE's vision is to provide value as the global leader of the chemical engineering profession and be the lifetime center for professional and personal growth. In 1908 a small group of chemical engineers formed a professional society to promote and improve chemical engineering as a discipline. At first, the American Institute of Chemical Engineers (AIChE) met with strong resistance, especially from the American Chemical Society (ACS), which claimed control over all pure and applied chemistry in the United States. In response, AIChE adopted a number of conservative measures, including strict membership criteria to keep membership low and avoid competition with ACS. Nonetheless, the value of AIChE was realized by the entire discipline in 1925, when chemical engineering became the first profession to use scholastic accreditation to ensure the consistency and quality of academic chemical engineering courses. The conservative attitude paid off when peace was made between ACS and AIChE around 1930. The membership criteria were lifted and chemical engineers joined in droves. Today AIChE remains the principal chemical engineering professional society in the United States. Currently about 57,000 (~70%) of American chemical engineers are members.",
     RecommendedInterest: ["Engineering", "Technology", "Science", "Chemistry"],
-    rating: 7.6,
+    rating: 3.6,
     numReviews: 54,
     imageURL:
       "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/300411771_504546601477661_932714118794191418_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DoS8qFSDibUAX81Rvqo&_nc_ht=scontent-lax3-2.xx&oh=00_AfBC6LqcHmJo3R1VFdFs4pN8TVgBzeEKRtkiPogbrk5VZw&oe=647338DB",
@@ -325,7 +325,7 @@ const clubsData = [
     description:
       "The American Medical Student Association, Premedical Chapter at UCLA, is committed to improving health care and healthcare delivery to all people; involving its members in the social, moral and ethical obligations of the profession of medicine; assisting in the improvement and understanding of world health problems; actively supplementing premedical education with a broader perspective and understanding of their chosen profession; contributing to the welfare of premedical students; and empowering the physician leaders of tomorrow.",
     RecommendedInterest: ["Academic", "Medicine", "Pre-Medicine", "Healthcare"],
-    rating: 4.5,
+    rating: 2.5,
     numReviews: 10,
     imageURL:
       "https://scontent-lax3-1.xx.fbcdn.net/v/t1.18169-9/29790136_1685097471586284_159850650658867850_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=9s8SjAScQ0QAX-iMsP9&_nc_oc=AQkPEI7SSZJuvQ5k0-MZ_JbcZwWaef7KyyGldYMiUfjf_fRFIewgp99UJbGfoe0lrZYwunyO0gybgh9_T9CfkgrV&_nc_ht=scontent-lax3-1.xx&oh=00_AfDird-a3W5jfCZPfZs4HGZz1hZbG1Z0N8DNK-7jdNru6Q&oe=649691A6",
@@ -341,7 +341,7 @@ const clubsData = [
       "Tech",
       "Coding",
     ],
-    rating: 9.5,
+    rating: 4.9,
     numReviews: 325,
     imageURL:
       "https://hack.uclaacm.com/static/db30fdb987ecfe4303c671f6c37009f9/df9ef/acm-hack-logo.webp",
@@ -357,7 +357,7 @@ const clubsData = [
       "Tech",
       "Coding",
     ],
-    rating: 8.7,
+    rating: 4.8,
     numReviews: 246,
     imageURL: "https://www.uclaacm.com/images/committees/studio_wordmark.svg",
   },
@@ -372,7 +372,7 @@ const clubsData = [
       "Tech",
       "Coding",
     ],
-    rating: 8.5,
+    rating: 4.5,
     numReviews: 167,
     imageURL: "https://www.uclaacm.com/images/committees/icpc_wordmark.svg",
   },
@@ -387,7 +387,7 @@ const clubsData = [
       "Tech",
       "Coding",
     ],
-    rating: 8.6,
+    rating: 4.6,
     numReviews: 213,
     imageURL: "https://www.uclaacm.com/images/committees/design_wordmark.svg",
   },
@@ -402,7 +402,7 @@ const clubsData = [
       "Tech",
       "Coding",
     ],
-    rating: 8.3,
+    rating: 4.3,
     numReviews: 210,
     imageURL: "https://www.uclaacm.com/images/committees/cyber_wordmark.svg",
   },
@@ -417,7 +417,7 @@ const clubsData = [
       "Tech",
       "Coding",
     ],
-    rating: 8.5,
+    rating: 4.5,
     numReviews: 119,
     imageURL: "https://www.uclaacm.com/images/committees/w_wordmark.svg",
   },
@@ -432,7 +432,7 @@ const clubsData = [
       "AI",
       "Coding",
     ],
-    rating: 8.4,
+    rating: 4.6,
     numReviews: 213,
     imageURL: "https://www.uclaacm.com/images/committees/ai_wordmark.svg",
   },
@@ -458,7 +458,7 @@ const clubsData = [
       "Technology",
       "Coding",
     ],
-    rating: 8.5,
+    rating: 3.5,
     numReviews: 127,
     imageURL:
       "https://static.wixstatic.com/media/1efdb3_78d9dde89bd64c96b8528ed77961e1a5~mv2.png/v1/fill/w_445,h_164,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/image%201.png",
@@ -474,7 +474,7 @@ const clubsData = [
       "Spanish",
       "Student Organization",
     ],
-    rating: 6.5,
+    rating: 3.5,
     numReviews: 20,
     imageURL:
       "https://scontent-lax3-1.xx.fbcdn.net/v/t1.6435-9/107268404_724878798328450_3084870611791430931_n.png?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=tpNuzBG1cHIAX8MsvCg&_nc_ht=scontent-lax3-1.xx&oh=00_AfDHq14ewi2Y1OlZDO0wS6CRxR_XQDN_NbtsFoL-QrTShw&oe=649663EC",
@@ -485,7 +485,7 @@ const clubsData = [
     description:
       "We are a team of students at UCLA who aim to create high-impact technology that empowers nonprofits to better serve their communities.",
     RecommendedInterest: ["Technology", "Science", "Community", "Engineering"],
-    rating: 8.5,
+    rating: 3.6,
     numReviews: 50,
     imageURL:
       "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/306144127_1036126513796279_5814599999089760744_n.png?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=_sme5jSiwaoAX_XkvoW&_nc_ht=scontent-lax3-2.xx&oh=00_AfCwn-W2GEa7GJze5UC2S2ZXxXQ1XmHtEQehlxoZVKKUpw&oe=64736361",
@@ -496,7 +496,7 @@ const clubsData = [
     description:
       "To address the issue of the low number of Latinx students enrolling in four-year universities, especially in the area of engineering, as well as to provide support for the Latinx community at UCLA. We seek to provide the resources necessary to help Latinx students achieve high academic success and receive internship/full-time job opportunities at an increased rate.",
     RecommendedInterest: ["Engineering", "Science", "Mechanical", "Latinx"],
-    rating: 6.7,
+    rating: 2.7,
     numReviews: 10,
     imageURL: "https://uclasoles.org/static/media/solesshpe.c17a0951.svg",
   },
@@ -506,7 +506,7 @@ const clubsData = [
     description:
       "Competitive baseball team practicing 2-3 times per week with 2 tournaments and a scheduled 3-game series in the Fall. Winter/Spring season consists of 2-3 practices per week, a complete conference schedule, and potential non-conference games scheduled at will.",
     RecommendedInterest: ["Sports", "Baseball", "Club", "Competitive"],
-    rating: 4.5,
+    rating: 3.5,
     numReviews: 10,
     imageURL:
       "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/300375391_957811838456506_9089307937404360477_n.png?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=mLdvfnAtnS8AX_dE9hL&_nc_ht=scontent-lax3-1.xx&oh=00_AfDnPCzzw4plrvvqgubdDt_wOcB4NWuhlPR5K-fUQLTXBQ&oe=6473CB23",
@@ -517,7 +517,7 @@ const clubsData = [
     description:
       "The UCLA Brazilian Jiu Jitsu Club (UCLA BJJ) is open to all experience levels and provides optional competition opportunities. Practices are free and open to all for Week 1 and Week 2 of every quarter. Brazilian Jiu-Jitsu is a martial art and combat sport based on ground fighting and submission holds. BJJ focuses on the skill of taking an opponent to the ground, controlling one's opponent, gaining a dominant position, and using a number of techniques to force them into submission via joint locks or chokeholds. Here at UCLA, we train primarily Nogi and encourage Gi participation.",
     RecommendedInterest: ["Jiu Jitsu", "Martial Arts", "MMA", "Wrestling"],
-    rating: 8.5,
+    rating: 4.5,
     numReviews: 43,
     imageURL:
       "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/302142333_514103497382457_2203137677966140819_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=K7GA2XVpzx4AX9PlAb5&_nc_ht=scontent-lax3-2.xx&oh=00_AfAeoZllo9tDgfkdxl3Sd_OeBUJ9JXLHCz0Wo0wCQOt4YQ&oe=647472FD",
@@ -528,7 +528,7 @@ const clubsData = [
     description:
       "UCLA Dragon Boat is a student-run competitive Club Sports team. We are 50 paddlers strong, making up two race crews: Blue and Gold. Through hard work and dedication, our team not only helps its members develop as paddlers, but also as students, athletes, and leaders. Above all else, UCLA Dragon Boat strives to be competitive, passionate, and fun.",
     RecommendedInterest: ["Sports", "Rowing", "Paddling", "Club Sports"],
-    rating: 6.5,
+    rating: 2.5,
     numReviews: 32,
     imageURL:
       "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/302089777_515192777276964_490985415690436234_n.png?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=TW-q7VrAjUsAX-tAsBI&_nc_ht=scontent-lax3-1.xx&oh=00_AfC6IQRPHD6XxOLjO4xsHIrYofQwaNqDUP5ewMDDYqa4qg&oe=64735768",
@@ -539,7 +539,7 @@ const clubsData = [
     description:
       "The UCLA Equestrian Team is a horseback riding program involving both practice and shows. We have a hunt seat team and compete in the Intercollegiate Horse Show Association (IHSA).",
     RecommendedInterest: ["Sports", "Horses", "Riding", "Horseback Riding"],
-    rating: 4.5,
+    rating: 3.5,
     numReviews: 10,
     imageURL:
       "https://static.wixstatic.com/media/88d84d_511a8bf9b64a4bea84788a5256d4516d~mv2.jpg/v1/fill/w_80,h_80,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/sfFwMSWA.jpg",
@@ -550,7 +550,7 @@ const clubsData = [
     description:
       "Esports division of Club sports featuring 50+ athletes in 8+ different teams across 8 titles.",
     RecommendedInterest: ["Gaming", "Esports", "Club", "Video Games"],
-    rating: 7.2,
+    rating: 3.2,
     numReviews: 61,
     imageURL:
       "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/298116678_489438609851362_9092893540370354777_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=aCmS9cm2PtAAX_-RSyq&_nc_oc=AQmur1yvcTIzNPqUBlr8EaZm5sbIpDErpBvx1qybpSZGU16rb5Mj2RjlHUWqKY-ayP0asY2aEsjtcUbuMG5w1wAk&_nc_ht=scontent-lax3-2.xx&oh=00_AfBYj3U9cEvD6K8rkfK0wxhJD3BRKlO0sgLLMvVcNOSCEg&oe=647443CB",
@@ -561,7 +561,7 @@ const clubsData = [
     description:
       "We are a club for golfers of all levels to improve their skills. We have weekly practices, and offer casual and competitive playing opportunities.",
     RecommendedInterest: ["Club Sport", "Sport", "Golf", "Golfing"],
-    rating: 6.5,
+    rating: 2.5,
     numReviews: 20,
     imageURL:
       "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/301365996_587738016376714_1644478353041228295_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=8gRvdlkWbzEAX8cV9Dj&_nc_ht=scontent-lax3-1.xx&oh=00_AfARryNoH1biE5X0BDo0kI7J1l1_er4vpky1CPTG6XEkWg&oe=64734218",
@@ -571,7 +571,7 @@ const clubsData = [
     title: "Gymnastics",
     description: "UCLA Club Gymnastics",
     RecommendedInterest: ["Sport", "Gymnastics", "Tumbling", "Club Gymnastics"],
-    rating: 7.5,
+    rating: 3.5,
     numReviews: 30,
     imageURL:
       "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/301803603_512169780911738_7858171122847351496_n.png?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=GE4_-gSS2woAX8UXrwJ&_nc_ht=scontent-lax3-1.xx&oh=00_AfAzAJEYMtQA1wnwD-las0w3pH5EKwlkaWWEQtmiubwr4w&oe=64739B68",
@@ -582,7 +582,7 @@ const clubsData = [
     description:
       "Judo is best known for its throwing techniques but also includes numerous techniques for controlling an opponent while on the ground. A good judoka, one who practices Judo, will first use timing and leverage to bring his opponent off balance and execute a throw, and then immobilize with grappling maneuvers or submit with arm locks and choke holds. This class will foster general fitness and well-being, and develop real-world safety and self-defense strategies, all while improving physical fitness, flexibility, strength, coordination, and agility.",
     RecommendedInterest: ["MMA", "Judo", "Judoka", "Sport"],
-    rating: 7.5,
+    rating: 3.5,
     numReviews: 40,
     imageURL:
       "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/305575312_450406940438427_4782974143409791421_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=mQoYVZochXYAX84mao9&_nc_ht=scontent-lax3-1.xx&oh=00_AfCjdFEmEZ2rZFpXdvUHNyhAm4bV0Spekjfh94YDqX_duQ&oe=6474C1F6",
@@ -593,7 +593,7 @@ const clubsData = [
     description:
       "UCLA Powerlifting is dedicated to fostering a supportive and inclusive environment for lifters of all levels to come together, gain skills and knowledge, get stronger, and build a sense of community.",
     RecommendedInterest: ["Gym", "Lifting", "Powerlifting", "Working Out"],
-    rating: 5.5,
+    rating: 2.5,
     numReviews: 43,
     imageURL:
       "https://uclaclubsports.com/images/2019/2/27/UCLA_W_Powerlifting_Story_New.jpg?width=1128&height=635&mode=crop&scale=both&format=jpg&quality=80",
@@ -604,7 +604,7 @@ const clubsData = [
     description:
       "California's first Club Swimming team! We train Mondays, Wednesdays, and Fridays from 7-8:30pm at the Student Activities Center Pool. We have a coach who is a very experienced swim coach and an overall chill, funny guy. He gives us the sets to swim during practice and alters them according to swimmers' skill levels. We take all skill levels: swimmers who join just for recreation to swimmers who compete at nationals. In terms of meets, we have around 2 meets per quarter. One travel meet and one home meet at Spieker (where the NCAA team competes!). All meets are optional but you are highly encouraged to represent us and compete! We will also be having free practices during Week 1 to allow you to get a feel if you would want to join us before paying. If you haven't already, please like our facebook page: UCLA Club Swimming! Dues are $70 per quarter, making us one of the cheapest club sports.",
     RecommendedInterest: ["Swimming", "Sports", "Team", "Swimmer"],
-    rating: 6.5,
+    rating: 3.5,
     numReviews: 30,
     imageURL:
       "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/300373578_502083878588068_2328878472774966007_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=F7oyhWtkC6AAX80muJa&_nc_ht=scontent-lax3-2.xx&oh=00_AfCf4VhNRM8mzNgMgs31fhDwfaqjJP0w0KJr5qryGi0ADQ&oe=6473757F",
@@ -642,7 +642,7 @@ const clubsData = [
     description:
       "Statement of purpose: BROAD SPECTRUM is a social support network for LGBTQIA+ students and allies. BROAD SPECTRUM strives to promote education and understanding of culture and issues within the LGBTQIA+ community with a focus on an inclusive, culturally-sensitive nursing environment. Mission statement: BROAD SPECTRUM works toward a more inclusive and accepting environment for LGBTQIA+ students, faculty and patients through education, support, social action, and advocacy. BROAD SPECTRUM provides a platform for students to advocate the needs of LGBTQIA+ patients through equality in nursing care. BROAD SPECTRUM fosters a greater sense of community for LGBTQIA+ identified students, faculty, and allies within the SON and between SON and the broader UCLA student body through education, outreach, and community service.",
     RecommendedInterest: ["Sexuality", "LGBTQ", "Gender", "Inclusivity"],
-    rating: 6.5,
+    rating: 2.5,
     numReviews: 354,
     imageURL:
       "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/309201230_157950873537264_8005913059246946549_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=lo5iiJOUgpsAX-O2Aza&_nc_ht=scontent-lax3-1.xx&oh=00_AfB0C5Vg7SkIvZPpyzrVXaaA2GdbfT58N1JCdANVaW5FLA&oe=64741ECC",
@@ -653,7 +653,7 @@ const clubsData = [
     description:
       "OutWrite Newsmagazine is the official queer newsmagazine of the University of California, Los Angeles. OutWrite strives to build a growing educational platform through a multi-media approach that uplifts and empowers the often silenced voices of the incredibly diverse queer community. We aim to challenge dominant cisheteronormative narratives through an unapologetically anti-queerphobic, anti-racist, and progressive lens. OutWrite was established in 1979 under its original title TenPercent, becoming the first queer college publication in the country. The name TenPercent was chosen from the Alfred Kinsey’s study Sexual Behavior in the Human Male which stated that 10% of men identified as homosexual. In 2005, the newsmagazine’s staff petitioned to change the name to OutWrite to decenter the white, cis, gay male identity and use a name which better represents the queer community’s vast spectrum of identities. Throughout the years, the newsmagazine referred to itself as a 'gay and lesbian' newsmagazine, slowly adding more identities to its moniker just as the mainstream community did in the late 20th century. Our label has since been changed to 'queer' newsmagazine to recognize both the importance of inclusivity in our community and the inherent radical nature of our mission; queer is a verb and political statement as much as it is an umbrella descriptor encompassing the ever-growing LGBTQ+ acronym. OutWrite is proud to transform and adapt itself to better represent and serve queer people, changing its own identity as our community grows and changes.",
     RecommendedInterest: ["Sexuality", "LGBTQ", "Gender", "Inclusivity"],
-    rating: 6.5,
+    rating: 2.5,
     numReviews: 210,
     imageURL:
       "https://d1fdloi71mui9q.cloudfront.net/l9fFX2MTxW4zldKfESVu_X6ZwuTNCobsDMiCu",
@@ -664,7 +664,7 @@ const clubsData = [
     description:
       "Queer Alliance at UCLA was formed to provide a bridge between all progressive LGBTQ+ organizations dealing with issues that touch people who are traditionally disadvantaged on the basis of sexual orientation, romantic attraction, gender expression, and/or gender identity. Queer Alliance recognizes the existence of past conflicts and tension amongst groups of various cultures and seeks to address these issues by serving as a bastion of greater understanding to which all interested parties can look towards as an example of the true spirit of cooperation through facilitation. The alliance looks forwards to maintaining its commitment to respect, understanding, equity, and equality while underscoring the need for the eradication of heteronormativity, queerphobia, and cisheterosexism outside and within the community at UCLA. These goals are achieved by fostering spaces wherein community can thrive, and engaging in social programming and advocacy efforts.",
     RecommendedInterest: ["Sexuality", "LGBTQ", "Gender", "Inclusivity"],
-    rating: 6.5,
+    rating: 2.3,
     numReviews: 70,
     imageURL:
       "https://uclaqueeralliance.weebly.com/uploads/1/2/2/0/122064318/qa-logo-3_orig.png",
@@ -675,7 +675,7 @@ const clubsData = [
     description:
       "A student run sports statistics organization which serves as a platform for sports research, data journalism, consulting, and machine learning applications. Bruin Sports Analytics is the only club at UCLA where you can actively practice your data science skills throughout the year. Through professional development opportunities and hands on applications, we aim to prepare our members for a successful career in the sports analytics industry.",
     RecommendedInterest: ["Sports", "Statistics", "Analytics", "Research"],
-    rating: 4.5,
+    rating: 3.1,
     numReviews: 24,
     imageURL:
       "https://static.wixstatic.com/media/d20f08_1036cd3668cb4022a60961c35ea36b10~mv2.png/v1/fill/w_47,h_47,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/logo_1.png",
@@ -686,7 +686,7 @@ const clubsData = [
     description:
       "Bruin Stock Group (BSG) is a student-run fund with over $600,000+ in Assets Under Management. Analysts work with and are mentored by experienced portfolio managers to gain real-world investing experience. In addition to working together to conscientiously evaluate investments for a maximal annual return, our members create a forum and supportive environment for individuals from all backgrounds who are interested in investing. We also have a quantitative trading division, that uses quantitative research and works to develop trading algorithms that will then be used allocate assets from our main fund into good investments and trades.",
     RecommendedInterest: ["Stocks", "Investment", "Business", "Banking"],
-    rating: 5.5,
+    rating: 3.1,
     numReviews: 65,
     imageURL:
       "https://static.wixstatic.com/media/43e067_b9607247770b4d47b586c94a0b94f000~mv2.jpg/v1/fill/w_93,h_88,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_9417.jpg",
@@ -703,7 +703,7 @@ const clubsData = [
       "Photography",
       "Painting",
     ],
-    rating: 5.5,
+    rating: 3.1,
     numReviews: 78,
     imageURL:
       "https://scontent-lax3-2.xx.fbcdn.net/v/t1.6435-9/71937697_513602562530278_7412299334470860800_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8631f5&_nc_ohc=yPS1qGDfOywAX-tQhcW&_nc_ht=scontent-lax3-2.xx&oh=00_AfChse-udzjJ-sYU3T8H2wp1QIVKQcknmXzcQ625iZCKMg&oe=64967229",
