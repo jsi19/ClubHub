@@ -20,11 +20,11 @@ const HomeScreen = () => {
   };
 
   const filteredClubs = clubsData.filter((club) => {
-    return (
-      selectedStars.includes(club.rating) ||
-      (selectedInterest === '' || club.title.includes(selectedInterest))
-    );
+    const interestMatch = selectedInterest === '' || club.title.includes(selectedInterest);
+    const starsMatch = selectedStars.length === 0 || selectedStars.includes(Math.floor(club.rating));
+    return interestMatch && starsMatch;
   });
+  
 
   return (
     <div>
@@ -32,35 +32,38 @@ const HomeScreen = () => {
         <h2>What clubs best fit your interest</h2>
         <input
           type="text"
-          placeholder="Search by interest..."
+          placeholder="Search by interest/name..."
           value={selectedInterest}
           onChange={handleInterestSelection}
+          style={{ width: '170px' }}
         />
       </section>
       <section className="content-section">
         <section className="filter-section">
           <div className="rating-filter">
-            <h3>Filter by Rating</h3>
-            <div>
-              {[1, 2, 3, 4, 5].map((star) => (
-                <label key={star}>
-                  <input
-                    type="checkbox"
-                    checked={selectedStars.includes(star)}
-                    onChange={() => handleStarSelection(star)}
-                  />
-                  {Array(star)
-                    .fill('★')
-                    .join('')}
-                </label>
-              ))}
+            <h3 className='text-element'>Filter by Rating</h3>
+            <div className='star-section'>
+              {Array.from({ length: 5 }, (_, index) => {
+                const starCount = 5 - index;
+                return (
+                  <label key={starCount} className='star-element'>
+                    <input
+                      type="checkbox"
+                      checked={selectedStars.includes(starCount)}
+                      onChange={() => handleStarSelection(starCount)}
+                    />
+                    <span className="star-icon" style={{ color: '#50B0C8' }}>
+                      {Array(starCount).fill('★').join('')}
+                    </span>
+                  </label>
+                );
+              })}
             </div>
           </div>
 
-          <div className="interest-filter">
-            <h3>Filter by Interest</h3>
-            {/* Implement your dropdown component for interests here */}
-          </div>
+          {/* <div className="interest-filter">
+            <h3 className='text-element'>Filter by Interest</h3>
+          </div> */}
         </section>
 
         <section className="clubs-list">
@@ -72,6 +75,14 @@ const HomeScreen = () => {
                 <p>{club.description}</p>
                 <p>Rating: {club.rating}</p>
                 <p>Reviews: {club.numReviews}</p>
+                <div className="recommended-interests">
+                  Recommended if interests are: 
+                  {club.RecommendedInterest.map((interest, index) => (
+                    <span key={index} className="interest-item">
+                      {interest}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
