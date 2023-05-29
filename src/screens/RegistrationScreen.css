@@ -1,0 +1,27 @@
+.body-section {
+    display: flex; /* Added */
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+  }
+
+.registration-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: #F7DEC0;
+}
+
+.heading-text {
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+    color: #115D81;
+}
+
+.login-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: #E7C7B4;
+}
+  
