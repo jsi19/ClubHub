@@ -20,8 +20,14 @@ const HomeScreen = () => {
   };
 
   const filteredClubs = clubsData.filter((club) => {
-    const interestMatch = selectedInterest === '' || club.title.includes(selectedInterest);
-    const starsMatch = selectedStars.length === 0 || selectedStars.includes(Math.floor(club.rating));
+    const interestMatch =
+      selectedInterest === '' ||
+      club.title.toLowerCase().includes(selectedInterest) ||
+      club.RecommendedInterest.some((interest) =>
+        interest.toLowerCase().includes(selectedInterest)
+      );
+    const starsMatch =
+      selectedStars.length === 0 || selectedStars.includes(Math.floor(club.rating));
     return interestMatch && starsMatch;
   });
   
