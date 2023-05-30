@@ -1,0 +1,60 @@
+
+.body-section {
+    display: flex; 
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    min-height: 100vh;
+  }
+
+
+.registration-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: #F7DEC0;
+}
+
+.heading-text {
+    font-size: 40px;
+    text-align: center;
+    padding: 25px;
+    color: #115D81;
+    padding-top: 25%;
+
+}
+
+.login-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: #E7C7B4;
+}
+
+.prompt-style{
+    font-size: 20px;
+    font-weight: bold;
+    color: #115D81;
+}
+
+.input-style{
+    width: 45%;
+    padding: 10px;
+    background-color: #2C95B5;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+button {
+    background-color: #115D81;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px;
+    cursor: pointer;
+    width: 175px;
+    margin: 10px;
+}
