@@ -1,0 +1,93 @@
+.heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    color: #115D81;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color:#F0EBD8;
+}
+
+.ratingForm {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* padding-left: 5%; */
+}
+
+.review-label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: #2C95B5;
+    margin-bottom: 20px;
+}
+
+.submit-review-style {
+    background-color: #115D81;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.input-style {
+    width: 45%;
+    padding: 10px;
+    background-color: #2C95B5;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+::placeholder {
+    color: #ffffff;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ffffff;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #2C95B5;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #1d6a81;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #1d6a81;
+}
