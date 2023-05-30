@@ -1,5 +1,4 @@
 .heading {
-<<<<<<< Updated upstream
     font-family: 'Poppins, sans-serif';
     font-size: 25px;
     color: #115D81;
@@ -13,73 +12,15 @@
 }
 
 label {
-=======
-    font-family: 'Poppins', sans-serif;
-    font-size: 25px;
-    color: #115D81;
-    font-weight: bold;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    background-color:#F0EBD8;
-}
-
-.club-image {
-    width: 15%;
-    margin-right: 10px;
-    border-radius: 10px;
-  }
-
-.ratingForm {
-    margin: 50px;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    /* padding-left: 5%; */
-}
-
-.review-label {
->>>>>>> Stashed changes
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 25px;
     color: #2C95B5;
-<<<<<<< Updated upstream
 }
 
 input {
     width: px;
     padding: 10px;
-=======
-    margin-bottom: 20px;
-}
-
-.submit-review-style {
-    background-color: #115D81;
-    border: none;
-    border-radius: 5px;
-    color: #ffffff;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    font-size: 15px;
-    padding: 10px;
-    margin-bottom: 30px;
-    cursor: pointer;
-}
-
-.input-style {
-    width: 45%;
-    padding: 10px;
-    background-color: #2C95B5;
-    border: none;
-    border-radius: 10px;
-    margin: 10px;
-}
-
-::placeholder {
-    color: #ffffff;
-    font-size: 15px;
-    font-family: 'Poppins', sans-serif;
->>>>>>> Stashed changes
 }
 
 *{
@@ -102,11 +43,7 @@ input {
     white-space:nowrap;
     cursor:pointer;
     font-size:30px;
-<<<<<<< Updated upstream
     color:#000000;
-=======
-    color:#ffffff;
->>>>>>> Stashed changes
 }
 .rate:not(:checked) > label:before {
     content: '★ ';
@@ -116,21 +53,12 @@ input {
 }
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
-<<<<<<< Updated upstream
     color: #2C95B5;  
-=======
-    color: #1d6a81;  
->>>>>>> Stashed changes
 }
 .rate > input:checked + label:hover,
 .rate > input:checked + label:hover ~ label,
 .rate > input:checked ~ label:hover,
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
-<<<<<<< Updated upstream
     color: #2C95B5;
 }
-=======
-    color: #1d6a81;
-}
->>>>>>> Stashed changes
