@@ -73,4 +73,4 @@ export default function SignUp({ handleChange }) {
       setEmailError(true);
       return false;
     }
-    const dom = e.substring(e.indexOf("@") + 1
+    const dom = e.substring(e.indexOf("@") + 1)
