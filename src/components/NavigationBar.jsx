@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const NavigationBar = () => {
+const NavigationBar = ({ loggedIn }) => {
   const navContainerStyle = {
     display: 'flex',
     alignItems: 'center',
@@ -37,21 +38,34 @@ const NavigationBar = () => {
     marginLeft: '16px',
     cursor: 'pointer',
     color: '#115D81',
+    textDecoration: 'none', // Remove underline from the link
   };
-  
+
+  const logoLink = loggedIn ? '/home' : '/';
 
   return (
     <div style={navContainerStyle}>
       <div style={navTitleStyle}>
-        <div style={navLogoStyle}>
-          <img src="/logo_icon.png" alt="Logo" style={{ height: '100%' }} />
+        <Link to={logoLink}>
+          <div style={navLogoStyle}>
+            <img src="/logo_icon.png" alt="Logo" style={{ height: '100%' }} />
+          </div>
+        </Link>
+      </div>
+      {!loggedIn && (
+        <div style={navItemsStyle}>
+          <Link to="/registration" style={navItemStyle}>
+            Register/Login
+          </Link>
         </div>
-      </div>
-      <div style={navItemsStyle}>
-        <div style={navItemStyle}>Match</div>
-        <div style={navItemStyle}>My Clubs</div>
-        <div style={navItemStyle}>Profile</div>
-      </div>
+      )}
+      {loggedIn && (
+        <div style={navItemsStyle}>
+          <div style={navItemStyle}>Match</div>
+          <div style={navItemStyle}>My Clubs</div>
+          <div style={navItemStyle}>Profile</div>
+        </div>
+      )}
     </div>
   );
 };
