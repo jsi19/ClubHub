@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
-import clubsData from '../components/club_dump'; // Update the import path
+import clubsData from '../components/club_dump';
 import './HomeScreen.css';
+import { collection, addDoc, getDocs, query, where } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+import { firestore } from '../firebase-config';
+
+// Initialize Firebase
+const auth = getAuth();
 
 const HomeScreen = () => {
   console.log(clubsData); // Add this line to log the clubsData
@@ -19,6 +25,32 @@ const HomeScreen = () => {
     setSelectedInterest(event.target.value);
   };
 
+  const handleAddClub = async (clubId) => {
+    try {
+      const clubsCollectionRef = collection(
+        firestore,
+        'users',
+        auth.currentUser?.uid,
+        'MyClubs'
+      );
+  
+      // Check if clubId already exists in MyClubs collection
+      const clubsQuery = query(clubsCollectionRef, where('clubId', '==', clubId));
+      const querySnapshot = await getDocs(clubsQuery);
+  
+      if (!querySnapshot.empty) {
+        console.log('Club already exists in MyClubs');
+        return;
+      }
+  
+      // Add clubId to MyClubs collection
+      await addDoc(clubsCollectionRef, { clubId });
+      console.log('Club added successfully!');
+    } catch (error) {
+      console.error('Error adding club:', error);
+    }
+  };
+
   const filteredClubs = clubsData.filter((club) => {
     const interestMatch =
       selectedInterest === '' ||
@@ -30,7 +62,6 @@ const HomeScreen = () => {
       selectedStars.length === 0 || selectedStars.includes(Math.floor(club.rating));
     return interestMatch && starsMatch;
   });
-  
 
   return (
     <div>
@@ -47,12 +78,12 @@ const HomeScreen = () => {
       <section className="content-section">
         <section className="filter-section">
           <div className="rating-filter">
-            <h3 className='text-element'>Filter by Rating</h3>
-            <div className='star-section'>
+            <h3 className="text-element">Filter by Rating</h3>
+            <div className="star-section">
               {Array.from({ length: 5 }, (_, index) => {
                 const starCount = 5 - index;
                 return (
-                  <label key={starCount} className='star-element'>
+                  <label key={starCount} className="star-element">
                     <input
                       type="checkbox"
                       checked={selectedStars.includes(starCount)}
@@ -66,10 +97,6 @@ const HomeScreen = () => {
               })}
             </div>
           </div>
-
-          {/* <div className="interest-filter">
-            <h3 className='text-element'>Filter by Interest</h3>
-          </div> */}
         </section>
 
         <section className="clubs-list">
@@ -82,13 +109,14 @@ const HomeScreen = () => {
                 <p>Rating: {club.rating}</p>
                 <p>Reviews: {club.numReviews}</p>
                 <div className="recommended-interests">
-                  Recommended if interests are: 
+                  Recommended if interests are:
                   {club.RecommendedInterest.map((interest, index) => (
                     <span key={index} className="interest-item">
                       {interest}
                     </span>
                   ))}
                 </div>
+                <button onClick={() => handleAddClub(club.id)}>Add Club</button>
               </div>
             </div>
           ))}
