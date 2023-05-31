@@ -1,7 +1,17 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { Form, Button } from "react-bootstrap";
+<<<<<<< Updated upstream
+=======
+import clubsData from "../components/club_dump";
+import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+import { firestore } from "../firebase-config";
+>>>>>>> Stashed changes
 import "./CompleteProfileScreen.css"; // Import the CSS file for component-specific styles
+
+// Initialize Firebase
+const auth = getAuth();
 
 const SelectedInterest = ({ interest, onRemove }) => {
   return (
@@ -30,9 +40,35 @@ const CompleteProfileScreen = () => {
     setInterests(updatedInterests);
   };
 
-  const handleSubmit = () => {
-    // Perform profile submission or further processing
-    console.log({ major, schoolYear, interests });
+  // const handleSubmit = () => {
+  //   // Perform profile submission or further processing
+  //   console.log({ major, schoolYear, interests });
+  // };
+
+  const handleSubmit = async () => {
+    try {
+      const profileCollectionRef = collection(
+        firestore,
+        "users",
+        auth.currentUser?.uid,
+        "Profile"
+      );
+
+      // Add profile data to the Profile collection
+      await addDoc(profileCollectionRef, {
+        major,
+        schoolYear,
+        interests,
+      });
+      console.log("Profile added successfully!");
+
+      // Reset the form fields
+      setMajor("");
+      setSchoolYear("");
+      setInterests([]);
+    } catch (error) {
+      console.error("Error adding profile:", error);
+    }
   };
 
   return (
