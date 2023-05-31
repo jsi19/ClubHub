@@ -1,11 +1,25 @@
+// import React, { useState } from "react";
+// import { Link } from "react-router-dom";
+// import { Form, Button } from "react-bootstrap";
+// import clubsData from "../components/club_dump";
+// import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
+// import { getAuth } from "firebase/auth";
+// import { firestore } from "../firebase-config";
+// import "./CompleteProfileScreen.css"; // Import the CSS file for component-specific styles
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import clubsData from "../components/club_dump";
-import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  doc,
+  updateDoc,
+  getDocs, // Add this line to import setDoc
+} from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { firestore } from "../firebase-config";
-import "./CompleteProfileScreen.css"; // Import the CSS file for component-specific styles
+import "./CompleteProfileScreen.css";
 
 // Initialize Firebase
 const auth = getAuth();
@@ -45,11 +59,6 @@ const CompleteProfileScreen = () => {
     ));
   }
 
-  // const handleSubmit = () => {
-  //   // Perform profile submission or further processing
-  //   console.log({ major, schoolYear, interests });
-  // };
-
   const handleSubmit = async () => {
     try {
       const profileCollectionRef = collection(
@@ -59,20 +68,32 @@ const CompleteProfileScreen = () => {
         "Profile"
       );
 
-      // Add profile data to the Profile collection
-      await addDoc(profileCollectionRef, {
-        major,
-        schoolYear,
-        interests,
-      });
-      console.log("Profile added successfully!");
+      const profileQuerySnapshot = await getDocs(profileCollectionRef);
+      if (profileQuerySnapshot.empty) {
+        // No profile document exists, create a new one
+        await addDoc(profileCollectionRef, {
+          major,
+          schoolYear,
+          interests,
+        });
+        console.log("Profile added successfully!");
+      } else {
+        // Profile document already exists, update it
+        const profileDocRef = profileQuerySnapshot.docs[0].ref;
+        await updateDoc(profileDocRef, {
+          major,
+          schoolYear,
+          interests,
+        });
+        console.log("Profile updated successfully!");
+      }
 
       // Reset the form fields
       setMajor("");
       setSchoolYear("");
       setInterests([]);
     } catch (error) {
-      console.error("Error adding profile:", error);
+      console.error("Error updating profile:", error);
     }
   };
 
