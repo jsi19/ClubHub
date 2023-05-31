@@ -62,7 +62,11 @@ const NavigationBar = ({ loggedIn }) => {
       {loggedIn && (
         <div style={navItemsStyle}>
           <div style={navItemStyle}>Match</div>
-          <div style={navItemStyle}>My Clubs</div>
+          <div style={navItemsStyle}>
+            <Link to="/my-clubs" style={navItemStyle}>
+              My Clubs
+            </Link>
+          </div>
           <div style={navItemStyle}>Profile</div>
         </div>
       )}
