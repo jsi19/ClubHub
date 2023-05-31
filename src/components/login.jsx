@@ -1,16 +1,8 @@
-import {
-  Button,
-  Grid,
-  Paper,
-  TextField,
-  Typography,
-  Link,
-} from "@mui/material";
+import { Button, Grid, Paper, TextField, Typography, Link } from "@mui/material";
 import React, { useState } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
-// We can change this to our style when we have the sign up page ready
 const styles = {
   textInputsVertical: { flexDirection: "column" },
   usernameInput: { flexDirection: "column", margin: 16, width: 300 },
@@ -24,25 +16,24 @@ export default function Login({ handleChange }) {
   const [signInError, setSignInError] = useState(false);
 
   const navigate = useNavigate();
-
   const auth = getAuth();
 
   function signIn() {
     console.log("sign in");
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        // Signed in
         setSignInError(false);
         navigate("/");
       })
       .catch((error) => {
-        if (
-          error.code === "auth/wrong-password" ||
-          error.code === "auth/user-not-found"
-        ) {
+        const wrongPasswordErrorCode = "auth/wrong-password";
+        const userNotFoundErrorCode = "auth/user-not-found";
+
+        if (error.code === wrongPasswordErrorCode || error.code === userNotFoundErrorCode) {
           setSignInError(true);
           return 1;
         }
+
         console.log("Error signing in.");
         console.error(error);
         alert("Failed to sign in. Please try again later.");
@@ -52,29 +43,14 @@ export default function Login({ handleChange }) {
 
   return (
     <>
-      <Paper
-        elevation={10}
-        xs={12}
-        sm={6}
-        style={{
-          padding: 40,
-        }}
-      >
-        <Grid
-          container
-          direction="column"
-          align="center"
-          bottom-margin="100vh"
-          height="auto"
-        >
+      <Paper elevation={10} xs={12} sm={6} style={{ padding: 40 }}>
+        <Grid container direction="column" align="center" bottom-margin="100vh" height="auto">
           <TextField
             id="email"
             label="Email"
             variant="outlined"
             style={styles.usernameInput}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             error={signInError}
             required
@@ -98,7 +74,7 @@ export default function Login({ handleChange }) {
           <Grid container justifyContent="center" align="center">
             <Button
               variant="contained"
-              onClick={() => signIn()}
+              onClick={signIn}
               style={styles.loginButton}
               fullWidth
             >
