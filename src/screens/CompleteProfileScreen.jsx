@@ -37,6 +37,14 @@ const CompleteProfileScreen = () => {
     setInterests(updatedInterests);
   };
 
+  function renderRecommendedInterests(interests) {
+    return interests.map((interest, index) => (
+      <option key={index} value={interest}>
+        {interest}
+      </option>
+    ));
+  }
+
   // const handleSubmit = () => {
   //   // Perform profile submission or further processing
   //   console.log({ major, schoolYear, interests });
@@ -130,6 +138,7 @@ const CompleteProfileScreen = () => {
             className='form-select'
             multiple
             onChange={handleInterestSelection}
+            onRemove={handleInterestRemoval}
             value={interests}
           >
             {clubsData.map((club) =>
@@ -137,7 +146,8 @@ const CompleteProfileScreen = () => {
             )}
           </Form.Select>
         </div>
-        <div className='form-group'>
+
+        {/* <div className='form-group'>
           <Form.Label>Selected Interests:</Form.Label>
           {interests.map((interest) => (
             <SelectedInterest
@@ -146,7 +156,7 @@ const CompleteProfileScreen = () => {
               onRemove={handleInterestRemoval}
             />
           ))}
-        </div>
+        </div> */}
 
         <div className='selected-interests-container'>
           <h4>Your Interests:</h4>
