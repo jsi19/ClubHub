@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, Link } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
 import HomeScreen from './screens/HomeScreen';
+import MyClubs  from './screens/MyClubs';
+import TopClubs from './screens/TopClubs';
 import CompleteProfileScreen from './screens/CompleteProfileScreen';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from './firebase-config';
@@ -37,6 +39,8 @@ function App() {
         {user ? (
           <>
             <Route path="/home" element={<HomeScreen />} />
+            <Route path="/my-clubs" element={<MyClubs />} />
+            <Route path="/match" element={<TopClubs/>} />
             <Route path="/complete-profile" element={<CompleteProfileScreen />} />
             <Route path="*" element={<Navigate to="/home" replace />} />
           </>

@@ -12,6 +12,7 @@ const HomeScreen = () => {
   console.log(clubsData); // Add this line to log the clubsData
   const [selectedStars, setSelectedStars] = useState([]);
   const [selectedInterest, setSelectedInterest] = useState('');
+  const [addedClubs, setAddedClubs] = useState([]);
 
   const handleStarSelection = (star) => {
     if (selectedStars.includes(star)) {
@@ -33,30 +34,34 @@ const HomeScreen = () => {
         auth.currentUser?.uid,
         'MyClubs'
       );
-  
+
       // Check if clubId already exists in MyClubs collection
       const clubsQuery = query(clubsCollectionRef, where('clubId', '==', clubId));
       const querySnapshot = await getDocs(clubsQuery);
-  
+
       if (!querySnapshot.empty) {
         console.log('Club already exists in MyClubs');
         return;
       }
-  
+
       // Add clubId to MyClubs collection
       await addDoc(clubsCollectionRef, { clubId });
       console.log('Club added successfully!');
+
+      // Update the addedClubs state
+      setAddedClubs([...addedClubs, clubId]);
     } catch (error) {
       console.error('Error adding club:', error);
     }
   };
 
   const filteredClubs = clubsData.filter((club) => {
+    const temp = selectedInterest.toLowerCase()
     const interestMatch =
-      selectedInterest === '' ||
-      club.title.toLowerCase().includes(selectedInterest) ||
+      temp === '' ||
+      club.title.toLowerCase().includes(temp) ||
       club.RecommendedInterest.some((interest) =>
-        interest.toLowerCase().includes(selectedInterest)
+        interest.toLowerCase().includes(temp)
       );
     const starsMatch =
       selectedStars.length === 0 || selectedStars.includes(Math.floor(club.rating));
@@ -116,7 +121,11 @@ const HomeScreen = () => {
                     </span>
                   ))}
                 </div>
-                <button onClick={() => handleAddClub(club.id)}>Add Club</button>
+                {addedClubs.includes(club.id) ? (
+                  <button disabled>Added</button>
+                ) : (
+                  <button onClick={() => handleAddClub(club.id)}>Add Club</button>
+                )}
               </div>
             </div>
           ))}
