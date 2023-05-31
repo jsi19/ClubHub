@@ -1,13 +1,32 @@
 import React from 'react';
-import NavigationBar from '../components/NavigationBar';
+import { Link } from 'react-router-dom';
 
+const LandingScreen = () => {
+  return (
+    <div style={containerStyle}>
+      <div style={MidText}>
+        <div style={TitleStyle}>Find Your Match</div>
+        <div style={SubtitleStyle}>explore clubs that best fit your needs</div>
+        <Link to="/registration">
+          <button style={GetStartedButton}>Get Started</button>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+const containerStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  height: '100vh',
+  backgroundColor: '#F7DEC0',
+};
 
 const MidText = {
   fontFamily: 'Poppins, sans-serif',
   color: '#2C95B5',
-  alignItems: 'center',
-  padding: '225px 0',
-  minHeight: '100vh', /* Set the height to 100% of the viewport height */
+  textAlign: 'center',
 };
 
 const TitleStyle = {
@@ -32,21 +51,6 @@ const GetStartedButton = {
   padding: '20px 50px',
   display: 'inline-block',
   border: 'none',
-};
-
-const LandingScreen = () => {
-  return (
-    <div>
-      <body style={{backgroundColor:'#F7DEC0'}}>
-      <div style={MidText}>
-        <div style={TitleStyle}>Find Your Match</div>
-        <div style={SubtitleStyle}>explore clubs that best fit your needs</div>
-        <button style={GetStartedButton}>Get Started</button>      
-      </div>
-      </body>
-    </div>
-    
-  );
 };
 
 export default LandingScreen;

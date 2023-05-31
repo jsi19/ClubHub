@@ -1,57 +1,62 @@
-import "./App.css";
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
 import NavigationBar from './components/NavigationBar';
 import HomeScreen from "./screens/HomeScreen";
 import CompleteProfileScreen from "./screens/CompleteProfileScreen";
-import {
-  onAuthStateChanged,
-  signOut,
-} from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
 import RegistrationScreen from "./screens/RegistrationScreen";
+import LandingScreen from "./screens/LandingScreen";
 
 function App() {
-  const [user, setUser] = useState({});
-  const [showProfileScreen, setShowProfileScreen] = useState(false);
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
     });
 
-    // Cleanup the subscription when the component unmounts
     return () => unsubscribe();
-  }, []); // Empty dependency array ensures the effect runs only once
+  }, []);
 
   const logout = async () => {
     await signOut(auth);
-    setShowProfileScreen(false); // Hide the profile screen after logout
   };
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div>
+    <Router>
       <NavigationBar />
-      {!showProfileScreen ? (
-        <RegistrationScreen setShowProfileScreen={setShowProfileScreen} />
-      ) : (
+      <Routes>
+        <Route path="/" element={<LandingScreen />} />
+        {user ? (
+          <>
+            <Route path="/home" element={<HomeScreen />} />
+            <Route path="/complete-profile" element={<CompleteProfileScreen />} />
+            <Route path="*" element={<Navigate to="/home" replace />} />
+          </>
+        ) : (
+          <Route path="/registration" element={<RegistrationScreen />} />
+        )}
+      </Routes>
+      {user && (
         <>
-          <div>
-            <HomeScreen />
-          </div>
-          <div className="CompleteProfileScreen">
-            <CompleteProfileScreen />
-            <button onClick={() => setShowProfileScreen(false)}>
-              Back to Home
-            </button>
-          </div>
+          <h4>User Logged In:</h4>
+          {user.email}
+          <button onClick={logout}>Sign Out</button>
         </>
       )}
-
-      <h4> User Logged In: </h4>
-      {user?.email}
-
-      <button onClick={logout}> Sign Out </button>
-    </div>
+      {!user && (
+        <Link to="/">
+          <button onClick={logout}>Back to Landing Screen</button>
+        </Link>
+      )}
+    </Router>
   );
 }
 
