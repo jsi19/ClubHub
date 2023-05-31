@@ -8,7 +8,10 @@ import { backdropClasses } from '@mui/material';
 
 
 
-const ClubProfile = ({clubPFP, ClubName, about,commitments, requirements, score, numReviews}) => {
+const ClubProfile = ({clubPFP, ClubName, about,commitments, requirements, score, 
+  numReviews, rating1, ReviewTitle1, ReviewComments1, Pfp1, Major1, Year1, Interest1,
+  rating2, ReviewTitle2, ReviewComments2, Pfp2, Major2, Year2, Interest2,
+  rating3, ReviewTitle3, ReviewComments3, Pfp3, Major3, Year3, Interest3}) => {
   
   const ContainerStyle = {
     display: 'flex',
@@ -20,23 +23,55 @@ const ClubProfile = ({clubPFP, ClubName, about,commitments, requirements, score,
     
   };
 
-  const DesContainerStyle = {
-   // display: 'flex',
+  const SideContainerStyle = {
+    display: 'flex',
     alignItems: 'center',
+    justifyContent: 'space-evenly',
+    backgroundColor: '#F0EBD8',
+    height: '50px',
+    padding: '0 16px',
+   
+    
+  };
+
+  const SpaceContainerStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: '#F0EBD8',
+    height: '350px',
+    padding: '0 16px',
+    
+  };
+
+  const DesContainerStyle = {
+    alignItems: 'left',
     justifyContent: 'left',
     backgroundColor: '50B0C8',
     height: '350px',
     padding: '0 16px',
     
   };
-  const ReviewContainerStyle = {
-     alignItems: 'left',
-     justifyContent: 'left',
-     backgroundColor: '50B0C8',
-     height: '350px',
-     padding: '0 16px',
-     
+  const AverageReviewContainerStyle = {
+   // display: 'flex',
+    alignItems: 'left',
+    justifyContent: 'left',
+    backgroundColor: '#F0EBD8',
+    height: '100px',
+    padding: '0 16px',
+
    };
+
+   const ReviewContainerStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'left',
+    backgroundColor: '#F0EBD8',
+    height: '200px',
+    padding: '0 16px',
+ 
+    };
+    
 
   const ClubLogo = {
     height: '40px',
@@ -45,8 +80,14 @@ const ClubProfile = ({clubPFP, ClubName, about,commitments, requirements, score,
     cursor: 'pointer',
   };
 
+  const UserPfp = {
+    height: '40px',
+    cursor: 'pointer',
+   
+  };
+
   const TitleStyle = {
-    fontFamily: 'Poppins, sans-serif',
+    fontFamily: 'Poppins',
     fontSize: '24px',
     fontWeight: 'bold',
     color: '#115D81',
@@ -55,12 +96,33 @@ const ClubProfile = ({clubPFP, ClubName, about,commitments, requirements, score,
   };
 
   const ItemsStyle = {
-    fontFamily: 'Poppins, sans-serif',
+    fontFamily: 'Poppins',
     fontWeight: 'bold',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
   };
+
+  const ReviewStyle = {
+    fontFamily: 'Poppins, sans-serif',
+    fontWeight: 'bold',
+    display: 'flex',
+    alignItems: 'center',
+    color: '#2C95B5',
+    padding: '0 16px',
+    fontSize: '50px',
+  };
+
+  const MiniReviewStyle = {
+    fontFamily: 'Poppins, sans-serif',
+    fontWeight: 'bold',
+    display: 'flex',
+    alignItems: 'center',
+    color: '#2C95B5',
+    paddingTop: '20px',
+    fontSize: '20px',
+  };
+
 
   const ItemStyle = {
     marginLeft: '16px',
@@ -71,18 +133,19 @@ const ClubProfile = ({clubPFP, ClubName, about,commitments, requirements, score,
 
   const SubTitleStyle = {
     fontSize: '40px',
-    fontWeight: 'normal',
+    fontWeight: 'bold',
     color: '#2C95B5',
     textAlign: 'left',
-    
+    padding: '20px 50px',
+    fontFamily: 'Poppins'
   };
 
   const SubTextStyle = {
-    fontSize: '25px',
+    fontSize: '20px',
     fontWeight: 'normal',
     color: '#2C95B5',
     textAlign: 'left',
-    
+    fontFamily: 'Poppins'
   };
   
   const RegisterButton = {
@@ -99,8 +162,8 @@ const ClubProfile = ({clubPFP, ClubName, about,commitments, requirements, score,
   };
 
  
-  function sayHello() {
-    alert('You clicked me!');
+  function ButtonFunction() {
+    
   }
 
   const FilledStar = (props) => {
@@ -216,6 +279,38 @@ for (; stars.length < 5; i++) {
   );
 }
 
+const  ReviewBox = ({rating, ReviewTitle, ReviewComments, Pfp, Major, Year, Interest }) => {
+  return(
+    <div>
+      <hr></hr>
+      <div style={SpaceContainerStyle}>
+     <div style={ReviewContainerStyle}>
+         <MakeSmallStars rating = {rating} /> 
+         <div style={SubTitleStyle}>  {ReviewTitle}
+            <div style={SubTextStyle}>  {ReviewComments} </div>
+         </div>
+
+         <div style={ReviewContainerStyle}>   
+         <div style={SideContainerStyle}> 
+            <div style={UserPfp}>
+              <img src= {Pfp} alt="User Profile Picture" style={{ height: '100%' }} />
+            </div>
+       </div>
+       </div>
+       <div style={SpaceContainerStyle}>
+         <div style={SideContainerStyle}> 
+            <div style={SubTextStyle}>  Major: {Major}
+            <div style={SubTextStyle}>  Year :{Year} </div>
+            <div style={SubTextStyle}>  Interests: {Interest}  </div>
+              </div>  
+         </div>
+         </div>
+      </div>
+      </div>
+     </div>
+    );
+      };
+
   return (
 <div>
 <body style={{backgroundColor:'#F0EBD8'}}> 
@@ -234,7 +329,7 @@ for (; stars.length < 5; i++) {
       </div> 
 
       <div style={ItemStyle}>
-      <button style= {RegisterButton} onClick={sayHello}>Write a Review</button>
+      <button style= {RegisterButton} onClick={ButtonFunction}>Write a Review</button>
       </div>
       
     </div>
@@ -247,45 +342,30 @@ for (; stars.length < 5; i++) {
     <div style={SubTitleStyle}>  Membership Requirements </div>
     <div style={SubTextStyle}>  {requirements} </div>
     <div style={SubTitleStyle}>  Reviews </div>
-    <hr></hr>
-   
-
     
-      </div>
+   </div>
 
-      <div style={ContainerStyle}>
-      <MakeStars rating = "4"  />
-      
-      {score}
-      {numReviews}
-      
-      </div>
+
+
+
+    <div style={AverageReviewContainerStyle}>  
       <hr></hr>
-
-      <div style={ContainerStyle}>
-      <MakeSmallStars rating = "3" /> 
-      <div style={SubTitleStyle}>  Review Title </div>
-      <div style={DesContainerStyle}></div>
-      <div style={SubTextStyle}>  Comments </div>
-      
-
-      
-      </div>
-      <hr></hr>
-      <div style={ContainerStyle}>
-      <MakeSmallStars rating = "3" /> 
+     <div style={ReviewStyle}>  <MakeStars rating = {score} /> 
+     <div style={ReviewStyle}>  {score} </div>
+     <div style={MiniReviewStyle}>  {numReviews} Reviews</div>
+    </div>
+  
+    
+    </div>
+   
     
 
-      
-      </div>
-      <hr></hr>
-      <div style={ContainerStyle}>
-      <MakeSmallStars rating = "3" /> 
-
-      
-     </div>
-
-   
+    <ReviewBox rating = {rating1} ReviewTitle= {ReviewTitle1} ReviewComments = {ReviewComments1}
+     Pfp = {Pfp1} Major = {Major1} Year = {Year1} Interest = {Interest1}/>
+    <ReviewBox rating = {rating2} ReviewTitle= {ReviewTitle2} ReviewComments = {ReviewComments2}
+     Pfp = {Pfp2} Major = {Major2} Year = {Year2} Interest = {Interest2}/>
+    <ReviewBox rating = {rating3} ReviewTitle= {ReviewTitle3} ReviewComments = {ReviewComments3}
+     Pfp = {Pfp3} Major = {Major3} Year = {Year3} Interest = {Interest3}/>
    </body>
   
 </div> 
@@ -294,3 +374,5 @@ for (; stars.length < 5; i++) {
 
 
   export default ClubProfile;
+
+
