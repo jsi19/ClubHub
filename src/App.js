@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, Link } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
-import HomeScreen from "./screens/HomeScreen";
-import CompleteProfileScreen from "./screens/CompleteProfileScreen";
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "./firebase-config";
-import RegistrationScreen from "./screens/RegistrationScreen";
-import LandingScreen from "./screens/LandingScreen";
+import HomeScreen from './screens/HomeScreen';
+import CompleteProfileScreen from './screens/CompleteProfileScreen';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { auth } from './firebase-config';
+import RegistrationScreen from './screens/RegistrationScreen';
+import LandingScreen from './screens/LandingScreen';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -31,7 +31,7 @@ function App() {
 
   return (
     <Router>
-      <NavigationBar />
+      <NavigationBar loggedIn={user !== null} />
       <Routes>
         <Route path="/" element={<LandingScreen />} />
         {user ? (
