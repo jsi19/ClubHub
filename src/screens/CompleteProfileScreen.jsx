@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Form, Button } from "react-bootstrap";
-import clubsData from "../components/club_dump";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Form, Button } from 'react-bootstrap';
+import clubsData from '../components/club_dump';
 import {
   collection,
   addDoc,
   doc,
   updateDoc,
   getDocs,
-} from "firebase/firestore";
-import { getAuth } from "firebase/auth";
-import { firestore } from "../firebase-config";
-import "./CompleteProfileScreen.css";
+  getDoc,
+} from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+import { firestore } from '../firebase-config';
+import './CompleteProfileScreen.css';
 
 // Initialize Firebase
 const auth = getAuth();
@@ -25,50 +26,31 @@ const SelectedInterest = ({ interest, onRemove }) => {
 };
 
 const CompleteProfileScreen = () => {
-  const [major, setMajor] = useState("");
-  const [schoolYear, setSchoolYear] = useState("");
+  const [major, setMajor] = useState('');
+  const [schoolYear, setSchoolYear] = useState('');
   const [interests, setInterests] = useState([]);
 
   useEffect(() => {
-    // Load saved data from localStorage
-    const savedMajor = localStorage.getItem("selectedMajor");
-    const savedSchoolYear = localStorage.getItem("selectedSchoolYear");
-    const savedInterests = JSON.parse(localStorage.getItem("selectedInterests"));
-
-    if (savedMajor) setMajor(savedMajor);
-    if (savedSchoolYear) setSchoolYear(savedSchoolYear);
-    if (savedInterests) setInterests(savedInterests);
-  }, []);
-
-  useEffect(() => {
-    // Save data to localStorage whenever it changes
-    localStorage.setItem("selectedMajor", major);
-    localStorage.setItem("selectedSchoolYear", schoolYear);
-    localStorage.setItem("selectedInterests", JSON.stringify(interests));
-  }, [major, schoolYear, interests]);
-
-  useEffect(() => {
-    // Fetch interests from Firestore collection and update state
-    const fetchInterests = async () => {
+    // Fetch profile data from Firestore and prepopulate the form fields
+    const fetchProfileData = async () => {
       try {
-        const profileCollectionRef = collection(
-          firestore,
-          "users",
-          auth.currentUser?.uid,
-          "Profile"
-        );
+        const userDocRef = doc(firestore, "users", auth.currentUser?.uid);
+        const profileCollectionRef = collection(userDocRef, "Profile");
 
         const profileQuerySnapshot = await getDocs(profileCollectionRef);
+
         if (!profileQuerySnapshot.empty) {
-          const profileData = profileQuerySnapshot.docs[0].data();
-          setInterests(profileData.interests);
+          const profileDocData = profileQuerySnapshot.docs[0].data();
+          setMajor(profileDocData.major || "");
+          setSchoolYear(profileDocData.schoolYear || "");
+          setInterests(profileDocData.interests || []);
         }
       } catch (error) {
-        console.error("Error fetching interests:", error);
+        console.error("Error fetching profile data:", error);
       }
     };
 
-    fetchInterests();
+    fetchProfileData();
   }, []);
 
   const handleInterestSelection = (e) => {
@@ -101,39 +83,36 @@ const CompleteProfileScreen = () => {
 
   const handleSubmit = async () => {
     try {
-      const profileCollectionRef = collection(
-        firestore,
-        "users",
-        auth.currentUser?.uid,
-        "Profile"
-      );
+      const userDocRef = doc(firestore, 'users', auth.currentUser?.uid);
+      const profileCollectionRef = collection(userDocRef, 'Profile');
 
       const profileQuerySnapshot = await getDocs(profileCollectionRef);
+
       if (profileQuerySnapshot.empty) {
-        // No profile document exists, create a new one
-        await addDoc(profileCollectionRef, {
+        // No profile documents exist, create a new one
+        const newProfileDocRef = await addDoc(profileCollectionRef, {
           major,
           schoolYear,
           interests,
         });
-        console.log("Profile added successfully!");
+        console.log('Profile added successfully!', newProfileDocRef.id);
       } else {
-        // Profile document already exists, update it
+        // Profile document already exists, update the first document
         const profileDocRef = profileQuerySnapshot.docs[0].ref;
         await updateDoc(profileDocRef, {
           major,
           schoolYear,
           interests,
         });
-        console.log("Profile updated successfully!");
+        console.log('Profile updated successfully!', profileDocRef.id);
       }
 
       // Reset the form fields
-      setMajor("");
-      setSchoolYear("");
+      setMajor('');
+      setSchoolYear('');
       setInterests([]);
     } catch (error) {
-      console.error("Error updating profile:", error);
+      console.error('Error updating profile:', error);
     }
   };
 
@@ -152,27 +131,6 @@ const CompleteProfileScreen = () => {
             <option value="Computer Science">Computer Science</option>
             <option value="Chemical Engineering">Chemical Engineering</option>
             <option value="Business">Business</option>
-            <option value="Pre-Medicine">Pre-Medicine</option>
-            <option value="Economics">Economics</option>
-            <option value="Visual Arts">Visual Arts</option>
-            <option value="History">History</option>
-            <option value="Sociology">Sociology</option>
-            <option value="Mechanical Engineering">Mechanical Engineering</option>
-            <option value="Civil Engineering">Civil Engineering</option>
-            <option value="Gender Studies">Gender Studies</option>
-            <option value="Biology">Biology</option>
-            <option value="Chemistry">Chemistry</option>
-            <option value="Law">Law</option>
-            <option value="Digital Arts">Digital Arts</option>
-            <option value="Statitics">Statitics</option>
-            <option value="Human Biology">Human Biology</option>
-            <option value="Chicano Studies">Chicano Studies</option>
-            <option value="Philosophy">Philosophy</option>
-            <option value="English">English</option>
-            <option value="International Development">International Development</option>
-            <option value="Mathematics">Mathematics</option>
-            <option value="Biomedical Engineering">Biomedical Engineering</option>
-            <option value="Geography">Geography</option>
             {/* Add more options */}
           </Form.Select>
         </div>
@@ -229,3 +187,4 @@ const CompleteProfileScreen = () => {
 };
 
 export default CompleteProfileScreen;
+  
