@@ -1,80 +1,94 @@
+import React, { useState, useEffect } from 'react';
+import clubsData from '../components/club_dump';
+import './TopClubs.css';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+import { firestore } from '../firebase-config';
 
-import React from 'react';
+// Initialize Firebase
+const auth = getAuth();
 
-  const TitleStyle = {
-    fontSize: '64px',
-    fontWeight: 'bolder',
-    color : '#2C95B5',
-    padding : '20px',
-    fontFamily: 'poppins',
-   
+const TopClubs = () => {
+  const [selectedInterest, setSelectedInterest] = useState('');
+  const [topClubs, setTopClubs] = useState([]);
+
+  // Load user interests from Firestore on component mount
+  useEffect(() => {
+    const fetchUserInterests = async () => {
+      try {
+        const profileCollectionRef = collection(firestore, 'users', auth.currentUser?.uid, 'Profile');
+        const profileQuerySnapshot = await getDocs(profileCollectionRef);
+        const profileData = profileQuerySnapshot.docs[0]?.data();
+
+        if (profileData && profileData.interests) {
+          const userInterests = profileData.interests.map((interest) => interest.toLowerCase());
+          const matchingClubs = clubsData.filter((club) =>
+            club.RecommendedInterest.some((interest) => userInterests.includes(interest.toLowerCase()))
+          );
+          setTopClubs(matchingClubs.slice(0, 5));
+        }
+      } catch (error) {
+        console.error('Error fetching user interests:', error);
+      }
+    };
+
+    fetchUserInterests();
+  }, []);
+
+  const handleInterestSelection = (event) => {
+    setSelectedInterest(event.target.value);
   };
 
-  const SubTitleStyle = {
-    fontSize: '30px',
-    fontWeight: 'bold',
-    color: 'white',
-    textAlign: 'left',
-    margin: '10px 2px',
-    fontFamily: 'poppins',
-  };
+  const filteredClubs = topClubs.filter((club) => {
+    const temp = selectedInterest.toLowerCase()
+    const interestMatch =
+      temp === '' ||
+      club.title.toLowerCase().includes(temp) ||
+      club.RecommendedInterest.some((interest) => interest.toLowerCase().includes(temp));
+    return interestMatch;
+  });
 
-  const SubTextStyle = {
-    fontSize: '25px',
-    fontWeight: 'normal',
-    color: 'white',
-    textAlign: 'left',
-    margin: '10px 2px',
-    fontFamily: 'poppins',
-  };
+  return (
+    <div>
+      <section className="clubs-section">
+        <h2>Top 5 Recommended Clubs</h2>
+        <input
+          type="text"
+          placeholder="Search for top clubs..."
+          value={selectedInterest}
+          onChange={handleInterestSelection}
+          style={{ width: '170px' }}
+        />
+      </section>
+      <section className="content-section">
+        <section className="filter-section"/>
+        <section className="clubs-list">
+          {filteredClubs.map((club) => {
+            return (
+              <div key={club.id} className="club-item">
+                <img src={club.imageURL} alt={club.title} className="club-image" />
+                <div className="club-details">
+                  <h4>{club.title}</h4>
+                  <p>{club.description}</p>
+                  <p>Rating: {club.rating}</p>
+                  <p>Reviews: {club.numReviews}</p>
+                  <div className="recommended-interests">
+                    Recommended if interests are:
+                    {club.RecommendedInterest.map((interest, index) => (
+                      <span key={index} className="interest-item">
+                        {interest}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </section>
+        <section className="filter-section"/>
+      </section>
+    </div>
+  );
+};
 
-  const Box = {
-    fontFamily: 'Poppins, sans-serif',
-    backgroundColor: '#50B0C8',
-    fontWeight: 'bold',
-    fontSize: '16px',
-    alignItems: 'center',
-    color: 'white',
-    textAlign : 'left',
-    padding: '20px 50px',
-    height: '300px',
-    width: '800px',
-    display: 'inline-block',
-    border: 'none', 
-
-    margin: '10px 2px',
-  };
-
-  const  Info = ({clubName, rating, description, joinInfo, interest1, interest2, interest3}) => {
-    return(
-      <div style={Box}> 
-        <div style={SubTitleStyle}>{clubName}</div>
-        <div style={SubTextStyle}>Rating: {rating} </div>
-        <div style={SubTextStyle}>Description:{description} </div>
-        <div style={SubTextStyle}>How to Join: {joinInfo} </div>
-        <div style={SubTextStyle}>Reccomended because interests are: {interest1}, {interest2}, {interest3} </div>
-      </div>
-      );
-        };
-
-  const  TopClubs = ({club1, rating1, desc1, info1, int1,int2,int3,club2, rating2, desc2, info2, int4,int5,int6,
-    club3, rating3, desc3, info3, int7,int8,int9, club4, rating4, desc4, info4, int10,int11,int12,
-    club5, rating5, desc5, info5, int13,int14,int15}) => {
-    return (
-        <div>
-          <body style={{backgroundColor:'#F0EBD8'}}> 
-            <div style={TitleStyle}> Your Top Clubs</div>
-          
-            <Info clubName = {club1} rating = {rating1} description = {desc1} joinInfo = {info1} interest1= {int1} interest2={int2} interest3= {int3} />
-            <Info clubName = {club2} rating = {rating2} description = {desc2} joinInfo = {info2} interest1= {int4} interest2={int5} interest3= {int6} />
-            <Info clubName = {club3} rating = {rating3} description = {desc3} joinInfo = {info3} interest1= {int7} interest2={int8} interest3= {int9} />
-            <Info clubName = {club4} rating = {rating4} description = {desc4} joinInfo = {info4} interest1= {int10} interest2={int11} interest3= {int12} />
-            <Info clubName = {club5} rating = {rating5} description = {desc5} joinInfo = {info5} interest1= {int13} interest2={int14} interest3= {int15} />
-        
-          </body> 
-         </div>
-              
-    );
-  };
-
-  export default TopClubs;
+export default TopClubs;
