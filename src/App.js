@@ -9,6 +9,7 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from './firebase-config';
 import RegistrationScreen from './screens/RegistrationScreen';
 import LandingScreen from './screens/LandingScreen';
+import ClubProfile from './screens/ClubProfile';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -43,9 +44,13 @@ function App() {
             <Route path="/match" element={<TopClubs/>} />
             <Route path="/complete-profile" element={<CompleteProfileScreen />} />
             <Route path="*" element={<Navigate to="/home" replace />} />
+            <Route path="/club-profile" element={<ClubProfile />} />
           </>
         ) : (
+          <>
           <Route path="/registration" element={<RegistrationScreen />} />
+          
+          </>
         )}
       </Routes>
       {user && (

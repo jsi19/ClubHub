@@ -314,8 +314,8 @@ const  ReviewBox = ({rating, ReviewTitle, ReviewComments, Pfp, Major, Year, Inte
   return (
 <div>
 <body style={{backgroundColor:'#F0EBD8'}}> 
-  <NavigationBar />
-  <hr></hr>
+ 
+ 
 
     <div style={ContainerStyle}>
       <div style={TitleStyle}>
