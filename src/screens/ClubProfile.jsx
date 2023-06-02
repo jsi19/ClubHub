@@ -384,9 +384,9 @@ const  ReviewBox = ({rating, ReviewTitle, ReviewComments, Pfp, Major, Year, Inte
            
             
         
-            <ReviewBox rating = {rating1} ReviewTitle= {ReviewTitle1} ReviewComments = {ReviewComments1}
-             Pfp = {Pfp1} Major = {Major1} Year = {Year1} Interest = {Interest1}/>
-            <ReviewBox rating = {rating2} ReviewTitle= {ReviewTitle2} ReviewComments = {ReviewComments2}
+            <ReviewBox rating = {club.rating1} ReviewTitle= {club.ReviewTitle1} ReviewComments = {club.ReviewComments1}
+             Pfp = {Pfp1} Major = {club.Major1} Year = {club.Year1} Interest = {club.Interest1}/>
+            <ReviewBox rating = {club.rating2} ReviewTitle= {club.ReviewTitle2} ReviewComments = {club.ReviewComments2}
              Pfp = {Pfp2} Major = {Major2} Year = {Year2} Interest = {Interest2}/>
             <ReviewBox rating = {rating3} ReviewTitle= {ReviewTitle3} ReviewComments = {ReviewComments3}
              Pfp = {Pfp3} Major = {Major3} Year = {Year3} Interest = {Interest3}/>
