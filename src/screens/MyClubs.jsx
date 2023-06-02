@@ -4,6 +4,7 @@ import './HomeScreen.css';
 import { collection, getDocs, query, where , addDoc} from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { firestore } from '../firebase-config';
+import { Link } from 'react-router-dom';
 
 // Initialize Firebase
 const auth = getAuth();
@@ -116,6 +117,9 @@ const MyClubs = () => {
                       </span>
                     ))}
                   </div>
+                   <Link to={`/club-profile/${club.id}`}>
+                    <button style={ClubProfileButton}>Club Profile</button>
+                   </Link>
                 </div>
               </div>
             );
@@ -124,6 +128,20 @@ const MyClubs = () => {
       </section>
     </div>
   );
+};
+
+
+const ClubProfileButton = {
+  fontFamily: 'Poppins, sans-serif',
+  backgroundColor: '#115D81',
+  fontWeight: 'bold',
+  fontSize: '16px',
+  alignItems: 'center',
+  color: 'white',
+  margin: '10px 2px',
+  padding: '20px 50px',
+  display: 'inline-block',
+  border: 'none',
 };
 
 export default MyClubs;

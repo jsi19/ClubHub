@@ -7,7 +7,7 @@ const LandingScreen = () => {
       <div style={MidText}>
         <div style={TitleStyle}>Find Your Match</div>
         <div style={SubtitleStyle}>explore clubs that best fit your needs</div>
-        <Link to="/registration">
+        <Link to="/registration" state>
           <button style={GetStartedButton}>Get Started</button>
         </Link>
       </div>
