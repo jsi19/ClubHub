@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import clubsData from '../components/club_dump';
 import './HomeScreen.css';
-import { collection, getDocs, query, where , addDoc} from 'firebase/firestore';
+import { collection, getDocs, query, where , deleteDoc} from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { firestore } from '../firebase-config';
+import { Link } from 'react-router-dom';
 
 // Initialize Firebase
 const auth = getAuth();
@@ -47,6 +48,39 @@ const MyClubs = () => {
 
   const handleInterestSelection = (event) => {
     setSelectedInterest(event.target.value);
+  };
+
+  const handleRemoveClub = async (clubId) => {
+    try {
+      const clubsCollectionRef = collection(
+        firestore,
+        'users',
+        auth.currentUser?.uid,
+        'MyClubs'
+      );
+  
+      // Check if clubId exists in MyClubs collection
+      const clubsQuery = query(clubsCollectionRef, where('clubId', '==', clubId));
+      const querySnapshot = await getDocs(clubsQuery);
+  
+      if (querySnapshot.empty) {
+        console.log('Club does not exist in MyClubs');
+        return;
+      }
+  
+      // Get the document reference to delete
+      const docRef = querySnapshot.docs[0].ref;
+  
+      // Delete the document
+      await deleteDoc(docRef);
+      console.log('Club removed successfully!');
+  
+      // Update the addedClubs state
+      const updatedClubs = myClubs.filter((id) => id !== clubId);
+      setMyClubs(updatedClubs);
+    } catch (error) {
+      console.error('Error removing club:', error);
+    }
   };
 
 
@@ -116,6 +150,16 @@ const MyClubs = () => {
                       </span>
                     ))}
                   </div>
+                  <div className = "buttons">
+                    {myClubs.includes(club.id) ? (
+                      <button onClick={() => handleRemoveClub(club.id)}>Remove Club</button>
+                    ) : (
+                      <button disabled>Removed</button>
+                    )}
+                    <Link to={`/club-profile/${club.id}`}>
+                      <button style={ClubProfileButton}>Club Profile</button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             );
@@ -124,6 +168,20 @@ const MyClubs = () => {
       </section>
     </div>
   );
+};
+
+
+const ClubProfileButton = {
+  fontFamily: 'Poppins, sans-serif',
+  backgroundColor: '#115D81',
+  fontWeight: 'bold',
+  fontSize: '16px',
+  alignItems: 'center',
+  color: 'white',
+  margin: '10px 2px',
+  padding: '20px 50px',
+  display: 'inline-block',
+  border: 'none',
 };
 
 export default MyClubs;

@@ -4,6 +4,7 @@ import './HomeScreen.css';
 import { collection, addDoc, getDocs, query, where } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { firestore } from '../firebase-config';
+import { Link } from 'react-router-dom';
 
 // Initialize Firebase
 const auth = getAuth();
@@ -41,6 +42,7 @@ const HomeScreen = () => {
 
       if (!querySnapshot.empty) {
         console.log('Club already exists in MyClubs');
+        setAddedClubs([...addedClubs, clubId]);
         return;
       }
 
@@ -121,11 +123,16 @@ const HomeScreen = () => {
                     </span>
                   ))}
                 </div>
-                {addedClubs.includes(club.id) ? (
-                  <button disabled>Added</button>
-                ) : (
-                  <button onClick={() => handleAddClub(club.id)}>Add Club</button>
-                )}
+                <div className = "buttons">
+                  {addedClubs.includes(club.id) ? (
+                    <button disabled>Added</button>
+                  ) : (
+                    <button onClick={() => handleAddClub(club.id)}>Add Club</button>
+                  )}
+                  <Link to={`/club-profile/${club.id}`}>
+                    <button style={ClubProfileButton}>Club Profile</button>
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
@@ -133,6 +140,19 @@ const HomeScreen = () => {
       </section>
     </div>
   );
+};
+
+const ClubProfileButton = {
+  fontFamily: 'Poppins, sans-serif',
+  backgroundColor: '#115D81',
+  fontWeight: 'bold',
+  fontSize: '16px',
+  alignItems: 'center',
+  color: 'white',
+  margin: '10px 2px',
+  padding: '20px 50px',
+  display: 'inline-block',
+  border: 'none',
 };
 
 export default HomeScreen;
