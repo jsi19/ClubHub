@@ -9,7 +9,7 @@ import { useParams} from 'react-router-dom';
 
 
 
-const ClubProfile = (clubPFP, ClubName, about,commitments, requirements ) => {
+const ClubProfile = () => {
   
 
   
@@ -75,6 +75,7 @@ const ClubProfile = (clubPFP, ClubName, about,commitments, requirements ) => {
     backgroundColor: '#F0EBD8',
     height: '100px',
     padding: '40px 16px',
+    paddingTop: '100px',
 
    };
 
@@ -354,9 +355,9 @@ const  ReviewBox = ({rating, ReviewTitle, ReviewComments, Pfp, Major, Year, Inte
             <div style={SubTitleStyle}>  Description:  </div>
             <div style={SubTextStyle}>  {club.description} </div>
             <div style={SubTitleStyle}>  Commitments </div>
-            <div style={SubTextStyle}>  {commitments} </div>
+            <div style={SubTextStyle}>  {club.commitments} </div>
             <div style={SubTitleStyle}>  Membership Requirements </div>
-            <div style={SubTextStyle}>  {requirements} </div>
+            <div style={SubTextStyle}>  {club.requirements} </div>
             <div style={SubTitleStyle}>  Reviews </div>
             
            </div>
