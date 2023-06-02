@@ -56,6 +56,7 @@ const TopClubs = () => {
 
       if (!querySnapshot.empty) {
         console.log('Club already exists in MyClubs');
+        setAddedClubs([...addedClubs, clubId]);
         return;
       }
 
@@ -69,6 +70,7 @@ const TopClubs = () => {
       console.error('Error adding club:', error);
     }
   };
+  
   const filteredClubs = topClubs.filter((club) => {
     const temp = selectedInterest.toLowerCase()
     const interestMatch =
@@ -110,14 +112,16 @@ const TopClubs = () => {
                       </span>
                     ))}
                   </div>
-                  {addedClubs.includes(club.id) ? (
-                  <button disabled>Added</button>
-                ) : (
-                  <button onClick={() => handleAddClub(club.id)}>Add Club</button>
-                )}
-                  <Link to={`/club-profile/${club.id}`}>
-                       <button style={ClubProfileButton}>Club Profile</button>
-                  </Link>
+                  <div className = "buttons">
+                    {addedClubs.includes(club.id) ? (
+                      <button disabled>Added</button>
+                    ) : (
+                      <button onClick={() => handleAddClub(club.id)}>Add Club</button>
+                    )}
+                    <Link to={`/club-profile/${club.id}`}>
+                      <button style={ClubProfileButton}>Club Profile</button>
+                    </Link>
+                  </div>
                 </div>
                 
               </div>

@@ -42,6 +42,7 @@ const HomeScreen = () => {
 
       if (!querySnapshot.empty) {
         console.log('Club already exists in MyClubs');
+        setAddedClubs([...addedClubs, clubId]);
         return;
       }
 
@@ -122,14 +123,16 @@ const HomeScreen = () => {
                     </span>
                   ))}
                 </div>
-                {addedClubs.includes(club.id) ? (
-                  <button disabled>Added</button>
-                ) : (
-                  <button onClick={() => handleAddClub(club.id)}>Add Club</button>
-                )}
-                <Link to={`/club-profile/${club.id}`}>
-                       <button style={ClubProfileButton}>Club Profile</button>
-                </Link>
+                <div className = "buttons">
+                  {addedClubs.includes(club.id) ? (
+                    <button disabled>Added</button>
+                  ) : (
+                    <button onClick={() => handleAddClub(club.id)}>Add Club</button>
+                  )}
+                  <Link to={`/club-profile/${club.id}`}>
+                    <button style={ClubProfileButton}>Club Profile</button>
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

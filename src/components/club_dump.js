@@ -1,5 +1,3 @@
-import { Business, Weekend } from "@mui/icons-material";
-
 const clubsData = [
   {
     id: 1,
