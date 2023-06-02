@@ -7,15 +7,9 @@ import { useParams} from 'react-router-dom';
 
 
 
-/*, clubPFP, ClubName, about,commitments, requirements, score, 
-  numReviews, rating1, ReviewTitle1, ReviewComments1, Pfp1, Major1, Year1, Interest1,
-  rating2, ReviewTitle2, ReviewComments2, Pfp2, Major2, Year2, Interest2,
-  rating3, ReviewTitle3, ReviewComments3, Pfp3, Major3, Year3, Interest3 */
 
-const ClubProfile = (clubPFP, ClubName, about,commitments, requirements, score, 
-  numReviews, rating1, ReviewTitle1, ReviewComments1, Pfp1, Major1, Year1, Interest1,
-  rating2, ReviewTitle2, ReviewComments2, Pfp2, Major2, Year2, Interest2,
-  rating3, ReviewTitle3, ReviewComments3, Pfp3, Major3, Year3, Interest3) => {
+
+const ClubProfile = (clubPFP, ClubName, about,commitments, requirements ) => {
   
 
   
@@ -314,16 +308,14 @@ const  ReviewBox = ({rating, ReviewTitle, ReviewComments, Pfp, Major, Year, Inte
 
          <div style={ReviewContainerStyle}>   
          <div style={SideContainerStyle}> 
-            <div style={UserPfp}>
-              <img src= {Pfp} alt="User Profile Picture" style={{ height: '100%' }} />
-            </div>
+            
        </div>
        </div>
        <div style={SpaceContainerStyle}>
          <div style={SideContainerStyle}> 
             <div style={SubTextStyle}>  Major: {Major}
             <div style={SubTextStyle}>  Year :{Year} </div>
-            <div style={SubTextStyle}>  Interests: {Interest}  </div>
+            <div style={SubTextStyle}>  Interest: {Interest}  </div>
               </div>  
          </div>
          </div>
@@ -375,8 +367,8 @@ const  ReviewBox = ({rating, ReviewTitle, ReviewComments, Pfp, Major, Year, Inte
             <div style={AverageReviewContainerStyle}>  
               <hr></hr>
              <div style={ReviewStyle}>  <MakeStars rating = {club.rating} /> 
-             <div style={ReviewStyle}>  {score} </div>
-             <div style={MiniReviewStyle}>  {numReviews} Reviews</div>
+             <div style={ReviewStyle}>  {club.rating} </div>
+             <div style={MiniReviewStyle}>  {club.numReviews} Reviews</div>
             </div>
           
             
@@ -385,11 +377,11 @@ const  ReviewBox = ({rating, ReviewTitle, ReviewComments, Pfp, Major, Year, Inte
             
         
             <ReviewBox rating = {club.rating1} ReviewTitle= {club.ReviewTitle1} ReviewComments = {club.ReviewComments1}
-             Pfp = {Pfp1} Major = {club.Major1} Year = {club.Year1} Interest = {club.Interest1}/>
+              Major = {club.Major1} Year = {club.Year1} Interest = {club.Interest1}/>
             <ReviewBox rating = {club.rating2} ReviewTitle= {club.ReviewTitle2} ReviewComments = {club.ReviewComments2}
-             Pfp = {Pfp2} Major = {Major2} Year = {Year2} Interest = {Interest2}/>
-            <ReviewBox rating = {rating3} ReviewTitle= {ReviewTitle3} ReviewComments = {ReviewComments3}
-             Pfp = {Pfp3} Major = {Major3} Year = {Year3} Interest = {Interest3}/>
+              Major = {club.Major2} Year = {club.Year2} Interest = {club.Interest2}/>
+            <ReviewBox rating = {club.rating3} ReviewTitle= {club.ReviewTitle3} ReviewComments = {club.ReviewComments3}
+              Major = {club.Major3} Year = {club.Year3} Interest = {club.Interest3}/>
            </body>
           
         </div> 
@@ -398,30 +390,6 @@ const  ReviewBox = ({rating, ReviewTitle, ReviewComments, Pfp, Major, Year, Inte
 
 
       
-   
-
- /* 
- 
-
-        <div>
-        
-
-
-          <section className="content-section">
-         
-          <div>
-          {club.id}
-          {club.title}
-          
-          <div style={MiniReviewStyle}>  {club.title} Reviews</div>
-          </div>
-            <section className="clubs-list">
-              
-             
-              
-            </section>
-          </section>
-        </div> */
 
 
   export default ClubProfile;
