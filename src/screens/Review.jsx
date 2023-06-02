@@ -1,13 +1,29 @@
-import React, { useState } from 'react';
+import React, {  useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import clubsData from '../components/club_dump';
 import './Review.css';
+import { Link } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
+
 
 
 const Review = () => {
     const [reviewTitle, setReviewTitle] = useState('');
     const [rating, setRating] = useState('');
     const [reviewBody, setReviewBody] = useState('');
+
+  const {id} = useParams();
+  const clubId = parseInt(id, 10);
+  const [club, setClub] = useState(null);
+ 
+ useEffect(() => {
+      const desiredClub = clubsData.find((club) => club.id === clubId);
+      setClub(desiredClub); // Assuming desiredClub is an array with only one element
+   }, [id]);
+
+   if (!club) {
+       return <div>Loading...</div>; // Or any other loading indicator
+      }
       
     const handleSubmit = () => {
         // Perform profile submission or further processing
@@ -72,10 +88,12 @@ const Review = () => {
         <br></br>
         <br></br>
 
-
+        <Link to={`/club-profile/${club.id}`}>
         <Button variant="primary" onClick={handleSubmit} class="submit-review-style">
           Submit Review
         </Button>
+        </Link>
+
       </Form>
     </div>
     </div>

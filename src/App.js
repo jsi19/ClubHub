@@ -10,6 +10,8 @@ import { auth } from './firebase-config';
 import RegistrationScreen from './screens/RegistrationScreen';
 import LandingScreen from './screens/LandingScreen';
 import ClubProfile from './screens/ClubProfile';
+import Review from './screens/Review';
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -51,6 +53,7 @@ function App() {
         )}
          <Route>
            <Route path="/club-profile/:id" element={<ClubProfile />} />
+           <Route path="/review/:id" element={<Review />} />
          </Route>
       </Routes>
 

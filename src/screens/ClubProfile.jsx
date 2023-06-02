@@ -4,6 +4,8 @@ import NavigationBar from '../components/NavigationBar';
 import { backdropClasses } from '@mui/material';
 import clubsData from '../components/club_dump';
 import { useParams} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -353,7 +355,9 @@ const  ReviewBox = ({rating, ReviewTitle, ReviewComments, Pfp, Major, Year, Inte
               </div> 
         
               <div style={ItemStyle}>
+                <Link to={`/review/${club.id}`}>
               <button style= {RegisterButton} onClick={ButtonFunction}>Write a Review</button>
+              </Link>
               </div>
               
             </div>
