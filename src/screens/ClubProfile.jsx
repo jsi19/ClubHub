@@ -1,18 +1,40 @@
 
-import React from 'react';
+import React, {  useState, useEffect } from 'react';
 import NavigationBar from '../components/NavigationBar';
 import { backdropClasses } from '@mui/material';
+import clubsData from '../components/club_dump';
+import { useParams} from 'react-router-dom';
 
 
 
-
-
-
-const ClubProfile = ({clubPFP, ClubName, about,commitments, requirements, score, 
+/*, clubPFP, ClubName, about,commitments, requirements, score, 
   numReviews, rating1, ReviewTitle1, ReviewComments1, Pfp1, Major1, Year1, Interest1,
   rating2, ReviewTitle2, ReviewComments2, Pfp2, Major2, Year2, Interest2,
-  rating3, ReviewTitle3, ReviewComments3, Pfp3, Major3, Year3, Interest3}) => {
+  rating3, ReviewTitle3, ReviewComments3, Pfp3, Major3, Year3, Interest3 */
+
+const ClubProfile = (clubPFP, ClubName, about,commitments, requirements, score, 
+  numReviews, rating1, ReviewTitle1, ReviewComments1, Pfp1, Major1, Year1, Interest1,
+  rating2, ReviewTitle2, ReviewComments2, Pfp2, Major2, Year2, Interest2,
+  rating3, ReviewTitle3, ReviewComments3, Pfp3, Major3, Year3, Interest3) => {
   
+
+  
+ 
+
+
+ const {id} = useParams();
+ const clubId = parseInt(id, 10);
+ const [club, setClub] = useState(null);
+ 
+ useEffect(() => {
+      const desiredClub = clubsData.find((club) => club.id === clubId);
+      setClub(desiredClub); // Assuming desiredClub is an array with only one element
+   }, [id]);
+
+   if (!club) {
+       return <div>Loading...</div>; // Or any other loading indicator
+      }
+
   const ContainerStyle = {
     display: 'flex',
     alignItems: 'center',
@@ -58,7 +80,7 @@ const ClubProfile = ({clubPFP, ClubName, about,commitments, requirements, score,
     justifyContent: 'left',
     backgroundColor: '#F0EBD8',
     height: '100px',
-    padding: '0 16px',
+    padding: '40px 16px',
 
    };
 
@@ -310,67 +332,96 @@ const  ReviewBox = ({rating, ReviewTitle, ReviewComments, Pfp, Major, Year, Inte
      </div>
     );
       };
-
-  return (
-<div>
-<body style={{backgroundColor:'#F0EBD8'}}> 
- 
- 
-
-    <div style={ContainerStyle}>
-      <div style={TitleStyle}>
-        <div style={ClubLogo}>
-          <img src= {clubPFP} alt="Club Profile Picture" style={{ height: '100%' }} />
-        </div>
-      </div>
-     <div style={ItemsStyle}>
-        <div style={TitleStyle}>{ClubName}</div>
-        
-      </div> 
-
-      <div style={ItemStyle}>
-      <button style= {RegisterButton} onClick={ButtonFunction}>Write a Review</button>
-      </div>
       
-    </div>
-    <hr></hr>
-    <div style={DesContainerStyle}>
-    <div style={SubTitleStyle}>  About </div>
-    <div style={SubTextStyle}>  {about} </div>
-    <div style={SubTitleStyle}>  Commitments </div>
-    <div style={SubTextStyle}>  {commitments} </div>
-    <div style={SubTitleStyle}>  Membership Requirements </div>
-    <div style={SubTextStyle}>  {requirements} </div>
-    <div style={SubTitleStyle}>  Reviews </div>
-    
-   </div>
+      
+      
+         
+      return (
+        <div>
+        <body style={{backgroundColor:'#F0EBD8'}}> 
+        
+        
+            <div style={ContainerStyle}>
+              <div style={TitleStyle}>
+                <div style={ClubLogo}>
+                  <img src= {club.imageURL} alt="Club Profile Picture" style={{ height: '100%' }} />
+                </div>
+              </div>
+             <div style={ItemsStyle}>
+                <div style={TitleStyle}>{club.title}</div>
+                
+              </div> 
+        
+              <div style={ItemStyle}>
+              <button style= {RegisterButton} onClick={ButtonFunction}>Write a Review</button>
+              </div>
+              
+            </div>
+            <hr></hr>
+            <div style={DesContainerStyle}>
+            <div style={SubTitleStyle}>  Description:  </div>
+            <div style={SubTextStyle}>  {club.description} </div>
+            <div style={SubTitleStyle}>  Commitments </div>
+            <div style={SubTextStyle}>  {commitments} </div>
+            <div style={SubTitleStyle}>  Membership Requirements </div>
+            <div style={SubTextStyle}>  {requirements} </div>
+            <div style={SubTitleStyle}>  Reviews </div>
+            
+           </div>
+        
+        
+        
+        
+            <div style={AverageReviewContainerStyle}>  
+              <hr></hr>
+             <div style={ReviewStyle}>  <MakeStars rating = {club.rating} /> 
+             <div style={ReviewStyle}>  {score} </div>
+             <div style={MiniReviewStyle}>  {numReviews} Reviews</div>
+            </div>
+          
+            
+            </div>
+           
+            
+        
+            <ReviewBox rating = {rating1} ReviewTitle= {ReviewTitle1} ReviewComments = {ReviewComments1}
+             Pfp = {Pfp1} Major = {Major1} Year = {Year1} Interest = {Interest1}/>
+            <ReviewBox rating = {rating2} ReviewTitle= {ReviewTitle2} ReviewComments = {ReviewComments2}
+             Pfp = {Pfp2} Major = {Major2} Year = {Year2} Interest = {Interest2}/>
+            <ReviewBox rating = {rating3} ReviewTitle= {ReviewTitle3} ReviewComments = {ReviewComments3}
+             Pfp = {Pfp3} Major = {Major3} Year = {Year3} Interest = {Interest3}/>
+           </body>
+          
+        </div> 
+          );
+        }; 
 
 
-
-
-    <div style={AverageReviewContainerStyle}>  
-      <hr></hr>
-     <div style={ReviewStyle}>  <MakeStars rating = {score} /> 
-     <div style={ReviewStyle}>  {score} </div>
-     <div style={MiniReviewStyle}>  {numReviews} Reviews</div>
-    </div>
-  
-    
-    </div>
+      
    
-    
 
-    <ReviewBox rating = {rating1} ReviewTitle= {ReviewTitle1} ReviewComments = {ReviewComments1}
-     Pfp = {Pfp1} Major = {Major1} Year = {Year1} Interest = {Interest1}/>
-    <ReviewBox rating = {rating2} ReviewTitle= {ReviewTitle2} ReviewComments = {ReviewComments2}
-     Pfp = {Pfp2} Major = {Major2} Year = {Year2} Interest = {Interest2}/>
-    <ReviewBox rating = {rating3} ReviewTitle= {ReviewTitle3} ReviewComments = {ReviewComments3}
-     Pfp = {Pfp3} Major = {Major3} Year = {Year3} Interest = {Interest3}/>
-   </body>
-  
-</div> 
-  );
-};
+ /* 
+ 
+
+        <div>
+        
+
+
+          <section className="content-section">
+         
+          <div>
+          {club.id}
+          {club.title}
+          
+          <div style={MiniReviewStyle}>  {club.title} Reviews</div>
+          </div>
+            <section className="clubs-list">
+              
+             
+              
+            </section>
+          </section>
+        </div> */
 
 
   export default ClubProfile;

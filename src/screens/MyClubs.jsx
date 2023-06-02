@@ -4,7 +4,6 @@ import './HomeScreen.css';
 import { collection, getDocs, query, where , addDoc} from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { firestore } from '../firebase-config';
-
 import { Link } from 'react-router-dom';
 
 // Initialize Firebase
@@ -118,9 +117,9 @@ const MyClubs = () => {
                       </span>
                     ))}
                   </div>
-                  <Link to="/club-profile">
-          <button style={GetStartedButton}>Get Started</button>
-        </Link>
+                   <Link to={`/club-profile/${club.id}`}>
+                    <button style={ClubProfileButton}>Club Profile</button>
+                   </Link>
                 </div>
               </div>
             );
@@ -132,7 +131,7 @@ const MyClubs = () => {
 };
 
 
-const GetStartedButton = {
+const ClubProfileButton = {
   fontFamily: 'Poppins, sans-serif',
   backgroundColor: '#115D81',
   fontWeight: 'bold',

@@ -44,15 +44,16 @@ function App() {
             <Route path="/match" element={<TopClubs/>} />
             <Route path="/complete-profile" element={<CompleteProfileScreen />} />
             <Route path="*" element={<Navigate to="/home" replace />} />
-            <Route path="/club-profile" element={<ClubProfile />} />
           </>
         ) : (
-          <>
-          <Route path="/registration" element={<RegistrationScreen />} />
           
-          </>
+          <Route path="/registration" element={<RegistrationScreen />} />
         )}
+         <Route>
+           <Route path="/club-profile/:id" element={<ClubProfile />} />
+         </Route>
       </Routes>
+
       {user && (
         <>
           <h4>User Logged In:</h4>
@@ -64,7 +65,7 @@ function App() {
         <Link to="/">
           <button onClick={logout}>Back to Landing Screen</button>
         </Link>
-      )}
+      )}    
     </Router>
   );
 }
