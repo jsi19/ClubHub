@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import clubsData from '../components/club_dump';
 import './TopClubs.css';
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs, query, where, addDoc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { firestore } from '../firebase-config';
 import { Link } from 'react-router-dom';
@@ -12,6 +12,7 @@ const auth = getAuth();
 const TopClubs = () => {
   const [selectedInterest, setSelectedInterest] = useState('');
   const [topClubs, setTopClubs] = useState([]);
+  const [addedClubs, setAddedClubs] = useState([]);
 
   // Load user interests from Firestore on component mount
   useEffect(() => {
@@ -40,6 +41,34 @@ const TopClubs = () => {
     setSelectedInterest(event.target.value);
   };
 
+  const handleAddClub = async (clubId) => {
+    try {
+      const clubsCollectionRef = collection(
+        firestore,
+        'users',
+        auth.currentUser?.uid,
+        'MyClubs'
+      );
+
+      // Check if clubId already exists in MyClubs collection
+      const clubsQuery = query(clubsCollectionRef, where('clubId', '==', clubId));
+      const querySnapshot = await getDocs(clubsQuery);
+
+      if (!querySnapshot.empty) {
+        console.log('Club already exists in MyClubs');
+        return;
+      }
+
+      // Add clubId to MyClubs collection
+      await addDoc(clubsCollectionRef, { clubId });
+      console.log('Club added successfully!');
+
+      // Update the addedClubs state
+      setAddedClubs([...addedClubs, clubId]);
+    } catch (error) {
+      console.error('Error adding club:', error);
+    }
+  };
   const filteredClubs = topClubs.filter((club) => {
     const temp = selectedInterest.toLowerCase()
     const interestMatch =
@@ -81,6 +110,11 @@ const TopClubs = () => {
                       </span>
                     ))}
                   </div>
+                  {addedClubs.includes(club.id) ? (
+                  <button disabled>Added</button>
+                ) : (
+                  <button onClick={() => handleAddClub(club.id)}>Add Club</button>
+                )}
                   <Link to={`/club-profile/${club.id}`}>
                        <button style={ClubProfileButton}>Club Profile</button>
                   </Link>
