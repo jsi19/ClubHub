@@ -2,6 +2,7 @@
 import React, {  useState, useEffect } from 'react';
 import clubsData from '../components/club_dump';
 import { useParams} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const ClubProfile = () => {
  const {id} = useParams();
@@ -178,7 +179,9 @@ const  ReviewBox = ({rating, ReviewTitle, ReviewComments, Pfp, Major, Year, Inte
               </div> 
         
               <div style={ItemStyle}>
+              <Link to={`/review/${club.id}`}>
               <button style= {RegisterButton} onClick={ButtonFunction}>Write a Review</button>
+              </Link>
               </div>
               
             </div>
