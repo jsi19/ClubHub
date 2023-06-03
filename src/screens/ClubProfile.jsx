@@ -292,13 +292,14 @@ const  ReviewBox = ({rating, ReviewTitle, ReviewComments, Pfp, Major, Year, Inte
     
 
   const ClubLogo = {
-    height: '40px',
+    height: '100%',
     marginRight: '100px',
-    marginLeft: '200px',
+    marginLeft: 'auto',
     cursor: 'pointer',
   };
 
   const TitleStyle = {
+    height: '200px',
     fontFamily: 'Poppins',
     fontSize: '24px',
     fontWeight: 'bold',

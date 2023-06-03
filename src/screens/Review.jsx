@@ -19,7 +19,7 @@ const Review = () => {
  useEffect(() => {
       const desiredClub = clubsData.find((club) => club.id === clubId);
       setClub(desiredClub); // Assuming desiredClub is an array with only one element
-   }, [id]);
+   }, [clubId]);
 
    if (!club) {
        return <div>Loading...</div>; // Or any other loading indicator
