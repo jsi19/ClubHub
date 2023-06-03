@@ -1,45 +1,49 @@
-# ClubHub
-About Final project for UCLA CS 35L - a university-wide platform to help students find clubs and organizations at UCLA that BEST fit them
+# Club Hub
+<img width="268" alt="Screen_Shot_2022-12-02_at_9 46 55_PM-removebg-preview" src="public/logo_icon.png">
 
-Techstack: MERN(MongoDB, Express.js, React, Node.js), Firebase
+[Demo slide deck](https://docs.google.com/presentation/d/1TeXo4SHSpUcoE9fyAUvQnzgub9fBw-vXZS2gUIEPGTA/edit?usp=sharing) | [Demo Video]()
+## Overview
 
-# Getting Started with Create React App
+ClubHub is a web platform exclusively for UCLA students. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+We help students find clubs based on their interests and provide a rating and review system for better decision-making. Discover the perfect club at UCLA with ClubHub!
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### 1. Get Matched with clubs that best fit you
 
-### `npm start`
+Our website matches and recommends clubs to you based on your current interests and favorite clubs.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. Share your experiences
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Recommend the best clubs to join or criticize why you didn't enjoy them. You can choose to be anonymous: our app does not expose the email you used to sign up but instead uses your major and year.
 
-### `npm test`
+### 3. Analyze each club in depth
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+We strive to make our service a one-stop destination for everything UCLA clubs. It periodically monitors UCLA's official club api and tells you the newest information(how to join, requirements, etc) of each club. You can even search for clubs based on interests and rating.
 
-### `npm run build`
+## Running the App
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Perform the following actions on your terminal:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Clone the repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`git clone https://github.com/jsi19/ClubHub.git`
 
-### `npm run eject`
+Or, just download a zip directly through GitHub and extract it locally.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Enter the directory
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`cd ClubHub`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Install the dependencies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`npm i` or `npm install`
+
+### Run the app
+
+`npm start`
+
+### Explore and enjoy!
+
+Create an account and get started in looking for clubs that best fit YOU!
