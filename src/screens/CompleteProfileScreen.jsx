@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Form, Button } from 'react-bootstrap';
-import clubsData from '../components/club_dump';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Form, Button } from "react-bootstrap";
+import clubsData from "../components/club_dump";
 import {
   collection,
   addDoc,
@@ -9,25 +9,25 @@ import {
   updateDoc,
   getDocs,
   getDoc,
-} from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
-import { firestore } from '../firebase-config';
-import './CompleteProfileScreen.css';
+} from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+import { firestore } from "../firebase-config";
+import "./CompleteProfileScreen.css";
 
 // Initialize Firebase
 const auth = getAuth();
 
 const SelectedInterest = ({ interest, onRemove }) => {
   return (
-    <div className="selected-interest" onClick={() => onRemove(interest)}>
+    <div className='selected-interest' onClick={() => onRemove(interest)}>
       {interest}
     </div>
   );
 };
 
 const CompleteProfileScreen = () => {
-  const [major, setMajor] = useState('');
-  const [schoolYear, setSchoolYear] = useState('');
+  const [major, setMajor] = useState("");
+  const [schoolYear, setSchoolYear] = useState("");
   const [interests, setInterests] = useState([]);
 
   useEffect(() => {
@@ -83,8 +83,8 @@ const CompleteProfileScreen = () => {
 
   const handleSubmit = async () => {
     try {
-      const userDocRef = doc(firestore, 'users', auth.currentUser?.uid);
-      const profileCollectionRef = collection(userDocRef, 'Profile');
+      const userDocRef = doc(firestore, "users", auth.currentUser?.uid);
+      const profileCollectionRef = collection(userDocRef, "Profile");
 
       const profileQuerySnapshot = await getDocs(profileCollectionRef);
 
@@ -95,7 +95,7 @@ const CompleteProfileScreen = () => {
           schoolYear,
           interests,
         });
-        console.log('Profile added successfully!', newProfileDocRef.id);
+        console.log("Profile added successfully!", newProfileDocRef.id);
       } else {
         // Profile document already exists, update the first document
         const profileDocRef = profileQuerySnapshot.docs[0].ref;
@@ -104,57 +104,70 @@ const CompleteProfileScreen = () => {
           schoolYear,
           interests,
         });
-        console.log('Profile updated successfully!', profileDocRef.id);
+        console.log("Profile updated successfully!", profileDocRef.id);
       }
 
       // Reset the form fields
-      setMajor('');
-      setSchoolYear('');
+      setMajor("");
+      setSchoolYear("");
       setInterests([]);
     } catch (error) {
-      console.error('Error updating profile:', error);
+      console.error("Error updating profile:", error);
     }
   };
 
   return (
-    <div className="complete-profile-container">
+    <div className='complete-profile-container'>
       <h1>Complete Your Profile</h1>
       <Form>
-        <div className="form-group">
+        <div className='form-group'>
           <Form.Label>Major:</Form.Label>
           <Form.Select
-            className="form-select major-school-year"
+            className='form-select major-school-year'
             value={major}
             onChange={(e) => setMajor(e.target.value)}
           >
-            <option value=""></option>
-            <option value="Computer Science">Computer Science</option>
-            <option value="Chemical Engineering">Chemical Engineering</option>
-            <option value="Business">Business</option>
+            <option value=''></option>
+            <option value='Computer Science'>Computer Science</option>
+            <option value='Chemical Engineering'>Chemical Engineering</option>
+            <option value='Business'>Business</option>
+            <option value='Biology'>Biology</option>
+            <option value='Chemistry'>Chemistry</option>
+            <option value='Civil Engineering'>Civil Engineering</option>
+            <option value='Law'>Law</option>
+            <option value='Pre-Medicine'>Pre-Medicine</option>
+            <option value='Linguistics'>Linguistics</option>
+            <option value='Visual Arts'>Visual Arts</option>
+            <option value='Economics'>Economics</option>
+            <option value='Mechanical Engineering'>
+              Mechanical Engineering
+            </option>
+            <option value='Computer Engineering'>Computer Engineering</option>
+            <option value='Business'>Business</option>
             {/* Add more options */}
           </Form.Select>
         </div>
 
-        <div className="form-group">
+        <div className='form-group'>
           <Form.Label>UCLA Graduation Year:</Form.Label>
           <Form.Select
-            className="form-select major-school-year"
+            className='form-select major-school-year'
             value={schoolYear}
             onChange={(e) => setSchoolYear(e.target.value)}
           >
-            <option value=""></option>
-            <option value="1">1st Year</option>
-            <option value="2">2nd Year</option>
-            <option value="3">3rd Year/1st Year Transfer</option>
-            <option value="4">4th Year/2nd Year Transfer</option>
-            <option value="5">5th Year/3rd Year Transfer</option>
+            <option value=''></option>
+            <option value='1'>1st Year</option>
+            <option value='2'>2nd Year</option>
+            <option value='3'>3rd Year/1st Year Transfer</option>
+            <option value='4'>4th Year/2nd Year Transfer</option>
+            <option value='5'>5th Year/3rd Year Transfer</option>
           </Form.Select>
         </div>
 
-        <div className="form-group">
+        <div className='form-group'>
           <Form.Label>Available Interests:</Form.Label>
           <Form.Select
-            className="form-select"
+            className='form-select'
             multiple
             onChange={handleInterestSelection}
             value={interests}
@@ -163,7 +176,7 @@ const CompleteProfileScreen = () => {
           </Form.Select>
         </div>
 
-        <div className="selected-interests-container">
+        <div className='selected-interests-container'>
           <h4>Your Interests:</h4>
           <div>
             {interests.map((interest, index) => (
@@ -176,8 +189,8 @@ const CompleteProfileScreen = () => {
           </div>
         </div>
 
-        <Link to="*">
-          <Button variant="primary" onClick={handleSubmit}>
+        <Link to='*'>
+          <Button variant='primary' onClick={handleSubmit}>
             Submit
           </Button>
         </Link>
@@ -187,4 +200,3 @@ const CompleteProfileScreen = () => {
 };
 
 export default CompleteProfileScreen;
-  
