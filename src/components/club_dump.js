@@ -517,7 +517,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/305293346_416409250478890_8264908394476468499_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=o4oxv41C0JwAX9sT4t1&_nc_ht=scontent-lax3-2.xx&oh=00_AfCVbXWzg6hqlQd1b2FISu-gaAa4e4wHrU_C8bX520FCSg&oe=6474EAC4",
+      "https://axe-beta-gamma.square.site/uploads/b/37f99e67cbfa7011e9d7f6f03d0d8362b564b54332c1ab3ef85fdfd452a36f40/axstransparent_1641494436.png?width=2400&optimize=medium",
   },
   {
     id: 15,
