@@ -478,7 +478,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/299669821_592235122243117_2766277647589080191_n.png?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=x4QtOYFJF88AX9smtKu&_nc_ht=scontent-lax3-1.xx&oh=00_AfBmVixQpERZKIi2y3J5n-ZhhFW7sTY1uCrc7o4DSMXWTQ&oe=6474833B",
+      "https://media.licdn.com/dms/image/C560BAQEs99nRPX6eNw/company-logo_200_200/0/1531945319125?e=1694044800&v=beta&t=KtjZs7ue7wYMkm-nZvVTEDSH6TW8_KmOaAlDBJO5IAM",
   },
   {
     id: 14,
@@ -517,7 +517,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/305293346_416409250478890_8264908394476468499_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=o4oxv41C0JwAX9sT4t1&_nc_ht=scontent-lax3-2.xx&oh=00_AfCVbXWzg6hqlQd1b2FISu-gaAa4e4wHrU_C8bX520FCSg&oe=6474EAC4",
+      "https://axe-beta-gamma.square.site/uploads/b/37f99e67cbfa7011e9d7f6f03d0d8362b564b54332c1ab3ef85fdfd452a36f40/axstransparent_1641494436.png?width=2400&optimize=medium",
   },
   {
     id: 15,
@@ -555,7 +555,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/271747154_10159164415852098_2294470892016819674_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=xFmeIhhIXY4AX9OdnNd&_nc_ht=scontent-lax3-2.xx&oh=00_AfAoMqOntE-43XEqNVk6VSmAEbp6cLjhVCchSVhEgYRGZQ&oe=6474EF47",
+      "https://upload.wikimedia.org/wikipedia/en/3/34/Alpha_Delta_Pi_crest.png",
   },
   {
     id: 16,
@@ -729,7 +729,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/326259828_581626346719516_4330066905185523653_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=AA2w0addbCsAX-0Ke6u&_nc_ht=scontent-lax3-1.xx&oh=00_AfDh796va1OfSNudrNUHeMg0-a4rk9Lmrht0aTiqQesJlA&oe=64735845",
+      "https://secure3.convio.net/tacs/images/content/pagebuilder/RFL-large.jpg",
   },
   {
     id: 21,
@@ -768,7 +768,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/300442130_581448560100819_5226119457214064677_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=TjIzhcbKkbIAX-Aa3DU&_nc_ht=scontent-lax3-1.xx&oh=00_AfBflaGazZ4A16nlu1l4YfOarU6NPz0scjTOcCypdt-11A&oe=647492C3",
+      "https://se-images.campuslabs.com/clink/images/aeff9254-801f-4450-8399-469f6dcf17a609245a36-7d90-4aa4-9d76-5f514821ed46.jpg?preset=med-sq",
   },
   {
     id: 22,
@@ -802,7 +802,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://lh3.googleusercontent.com/wfSlv4pmwFmkfQSG7eo6SfTCJCs1pGqVkhAQPbQiLW9t5y0irp0zcABsmHniEyafSMhg-cy-qoRX2nu1hJcrb-c=w16383",
+      "https://www.ceed.ucla.edu/wp-content/uploads/ceed/AISES-Icon.png",
   },
   {
     id: 23,
@@ -869,7 +869,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/300411771_504546601477661_932714118794191418_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DoS8qFSDibUAX81Rvqo&_nc_ht=scontent-lax3-2.xx&oh=00_AfBC6LqcHmJo3R1VFdFs4pN8TVgBzeEKRtkiPogbrk5VZw&oe=647338DB",
+      "https://acc2021.a2c2.org/sites/acc21/files/styles/large/public/images/logos/aiche_logo_cmyk_highres.jpg?itok=8F60y2R8",
   },
   {
     id: 25,
@@ -1204,7 +1204,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/304790219_489586996509845_3090995013337305657_n.png?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=xgev4C83k_4AX9HdAYs&_nc_ht=scontent-lax3-2.xx&oh=00_AfCxMdQRFAwgKGMfDVN8aZivcuYX9BE9XtaIu0Yg6AwJTQ&oe=64739BDA",
+      "https://reslife.ucla.edu/sites/default/files/styles/header_image/public/2023-01/2023%20College%20Bowl%20Logo.jpg?itok=nDeLVuzj",
   },
   {
     id: 34,
@@ -1316,7 +1316,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/306144127_1036126513796279_5814599999089760744_n.png?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=_sme5jSiwaoAX_XkvoW&_nc_ht=scontent-lax3-2.xx&oh=00_AfCwn-W2GEa7GJze5UC2S2ZXxXQ1XmHtEQehlxoZVKKUpw&oe=64736361",
+      "https://community.ucla.edu/images/orgs/studentorg/4548-hero.jpg",
   },
   {
     id: 37,
@@ -1383,7 +1383,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/300375391_957811838456506_9089307937404360477_n.png?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=mLdvfnAtnS8AX_dE9hL&_nc_ht=scontent-lax3-1.xx&oh=00_AfDnPCzzw4plrvvqgubdDt_wOcB4NWuhlPR5K-fUQLTXBQ&oe=6473CB23",
+      "https://pbs.twimg.com/profile_images/1257800301521690624/ue27ZjUT_400x400.jpg",
   },
   {
     id: 39,
@@ -1417,7 +1417,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/302142333_514103497382457_2203137677966140819_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=K7GA2XVpzx4AX9PlAb5&_nc_ht=scontent-lax3-2.xx&oh=00_AfAeoZllo9tDgfkdxl3Sd_OeBUJ9JXLHCz0Wo0wCQOt4YQ&oe=647472FD",
+      "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/uclaclub.sidearmsports.com/images/logos/site/site.png",
   },
   {
     id: 40,
@@ -1451,7 +1451,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/302089777_515192777276964_490985415690436234_n.png?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=TW-q7VrAjUsAX-tAsBI&_nc_ht=scontent-lax3-1.xx&oh=00_AfC6IQRPHD6XxOLjO4xsHIrYofQwaNqDUP5ewMDDYqa4qg&oe=64735768",
+      "https://yt3.googleusercontent.com/BYm8nx6j993wYvBRWVGQDA7j_LNjoZ_3Xdgh198wE09UtNJ4Kt2yyCeLTv-p0hdw5F9I7Cw9Kw=s900-c-k-c0x00ffffff-no-rj",
   },
   {
     id: 41,
@@ -1519,7 +1519,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/298116678_489438609851362_9092893540370354777_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=aCmS9cm2PtAAX_-RSyq&_nc_oc=AQmur1yvcTIzNPqUBlr8EaZm5sbIpDErpBvx1qybpSZGU16rb5Mj2RjlHUWqKY-ayP0asY2aEsjtcUbuMG5w1wAk&_nc_ht=scontent-lax3-2.xx&oh=00_AfBYj3U9cEvD6K8rkfK0wxhJD3BRKlO0sgLLMvVcNOSCEg&oe=647443CB",
+      "https://pbs.twimg.com/profile_images/1642443526674980864/D35Sfepc_400x400.jpg",
   },
   {
     id: 43,
@@ -1553,7 +1553,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/301365996_587738016376714_1644478353041228295_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=8gRvdlkWbzEAX8cV9Dj&_nc_ht=scontent-lax3-1.xx&oh=00_AfARryNoH1biE5X0BDo0kI7J1l1_er4vpky1CPTG6XEkWg&oe=64734218",
+      "https://pbs.twimg.com/profile_images/1259941733418151940/C7n9kVnt_400x400.png",
   },
   {
     id: 44,
@@ -1586,7 +1586,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/301803603_512169780911738_7858171122847351496_n.png?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=GE4_-gSS2woAX8UXrwJ&_nc_ht=scontent-lax3-1.xx&oh=00_AfAzAJEYMtQA1wnwD-las0w3pH5EKwlkaWWEQtmiubwr4w&oe=64739B68",
+      "https://pbs.twimg.com/profile_images/1257820263237869568/7BGYyIS5_400x400.jpg",
   },
   {
     id: 45,
@@ -1620,7 +1620,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/305575312_450406940438427_4782974143409791421_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=mQoYVZochXYAX84mao9&_nc_ht=scontent-lax3-1.xx&oh=00_AfCjdFEmEZ2rZFpXdvUHNyhAm4bV0Spekjfh94YDqX_duQ&oe=6474C1F6",
+      "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/uclaclub.sidearmsports.com/images/logos/site/site.png",
   },
   {
     id: 46,
@@ -1688,7 +1688,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-6/300373578_502083878588068_2328878472774966007_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=F7oyhWtkC6AAX80muJa&_nc_ht=scontent-lax3-2.xx&oh=00_AfCf4VhNRM8mzNgMgs31fhDwfaqjJP0w0KJr5qryGi0ADQ&oe=6473757F",
+      "https://pbs.twimg.com/profile_images/1257800600864960512/rssX1L-K_400x400.jpg",
   },
   {
     id: 48,
@@ -1722,7 +1722,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/291611356_443873724411650_3728257439661732546_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=LpHZ4X9Gcz8AX_RIffP&_nc_ht=scontent-lax3-1.xx&oh=00_AfC-8sO8vkf75gQxa11BmcTuRwy3W8nQcJO2Yuu5DWybkA&oe=6473DE69",
+      "https://images.sidearmdev.com/crop?url=https%3a%2f%2fdxbhsrqyrr690.cloudfront.net%2fsidearm.nextgen.sites%2fuclaclub.sidearmsports.com%2fimages%2f2021%2f11%2f19%2fCharisse_Hung_UCLA_Wushu__71.jpg&height=797&width=1416&type=jpeg&gravity=smart",
   },
   {
     id: 49,
@@ -1795,7 +1795,7 @@ const clubsData = [
     Interest3: "Biology",
     Year3: "4",
     imageURL:
-      "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/309201230_157950873537264_8005913059246946549_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=lo5iiJOUgpsAX-O2Aza&_nc_ht=scontent-lax3-1.xx&oh=00_AfB0C5Vg7SkIvZPpyzrVXaaA2GdbfT58N1JCdANVaW5FLA&oe=64741ECC",
+      "https://community.ucla.edu/images/orgs/studentorg/4063-hero.jpg",
   },
   {
     id: 51,
