@@ -1,7 +1,7 @@
 # Club Hub
 <img width="268" alt="Screen_Shot_2022-12-02_at_9 46 55_PM-removebg-preview" src="public/logo_icon.png">
 
-[Demo slide deck](https://docs.google.com/presentation/d/1TeXo4SHSpUcoE9fyAUvQnzgub9fBw-vXZS2gUIEPGTA/edit?usp=sharing) | [Demo Video]()
+[Demo slide deck](https://docs.google.com/presentation/d/1TeXo4SHSpUcoE9fyAUvQnzgub9fBw-vXZS2gUIEPGTA/edit?usp=sharing) | [Demo Video](https://drive.google.com/file/d/1XHBz49RGvVfiCA3f5qmbm_N1vioz3C0i/view?usp=sharing)
 ## Overview
 
 ClubHub is a web platform exclusively for UCLA students. 
